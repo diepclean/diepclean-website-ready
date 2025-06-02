@@ -8,32 +8,27 @@ const Index = () => {
     {
       icon: <Sofa className="w-8 h-8" />,
       title: "Meubelreiniging",
-      description: "Professionele reiniging van banken, stoelen en andere meubels",
-      prijs: "Vanaf €45"
+      description: "Professionele reiniging van banken, stoelen en andere meubels"
     },
     {
       icon: <Droplets className="w-8 h-8" />,
       title: "Tapijtreiniging", 
-      description: "Diepe reiniging van tapijten en vloerkleden",
-      prijs: "Vanaf €3,50/m²"
+      description: "Diepe reiniging van tapijten en vloerkleden"
     },
     {
       icon: <Car className="w-8 h-8" />,
       title: "Auto Interieur",
-      description: "Complete reiniging van auto-interieur en bekleding",
-      prijs: "Vanaf €85"
+      description: "Complete reiniging van auto-interieur en bekleding"
     },
     {
       icon: <PawPrint className="w-8 h-8" />,
       title: "Dierlijke Geuren",
-      description: "Specialistische behandeling tegen dierlijke geuren",
-      prijs: "Vanaf €65"
+      description: "Specialistische behandeling tegen dierlijke geuren"
     },
     {
       icon: <Bed className="w-8 h-8" />,
       title: "Matrasreiniging",
-      description: "Hygiënische reiniging van matrassen en bedden",
-      prijs: "Vanaf €55"
+      description: "Hygiënische reiniging van matrassen en bedden"
     }
   ];
 
@@ -239,7 +234,6 @@ const Index = () => {
                   </div>
                   <h4 className="text-xl font-bold text-gray-800 mb-2">{service.title}</h4>
                   <p className="text-gray-600 mb-4">{service.description}</p>
-                  <div className="text-2xl font-bold text-green-600 mb-4">{service.prijs}</div>
                   <OfferteDialog>
                     <Button className="bg-green-500 hover:bg-green-600 w-full">
                       Offerte Aanvragen
