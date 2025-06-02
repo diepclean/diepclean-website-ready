@@ -1,34 +1,39 @@
-
-import { Phone, Mail, MapPin, Star, Droplets, Car, Bed, PawPrint, Sofa, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Star, Droplets, Car, Bed, PawPrint, Sofa, MessageCircle, Calculator, Shield, Clock, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { OfferteDialog } from "@/components/OfferteForm";
 
 const Index = () => {
   const services = [
     {
       icon: <Sofa className="w-8 h-8" />,
       title: "Meubelreiniging",
-      description: "Professionele reiniging van banken, stoelen en andere meubels"
+      description: "Professionele reiniging van banken, stoelen en andere meubels",
+      prijs: "Vanaf €45"
     },
     {
       icon: <Droplets className="w-8 h-8" />,
       title: "Tapijtreiniging", 
-      description: "Diepe reiniging van tapijten en vloerkleden"
+      description: "Diepe reiniging van tapijten en vloerkleden",
+      prijs: "Vanaf €3,50/m²"
     },
     {
       icon: <Car className="w-8 h-8" />,
       title: "Auto Interieur",
-      description: "Complete reiniging van auto-interieur en bekleding"
+      description: "Complete reiniging van auto-interieur en bekleding",
+      prijs: "Vanaf €85"
     },
     {
       icon: <PawPrint className="w-8 h-8" />,
       title: "Dierlijke Geuren",
-      description: "Specialistische behandeling tegen dierlijke geuren"
+      description: "Specialistische behandeling tegen dierlijke geuren",
+      prijs: "Vanaf €65"
     },
     {
       icon: <Bed className="w-8 h-8" />,
       title: "Matrasreiniging",
-      description: "Hygiënische reiniging van matrassen en bedden"
+      description: "Hygiënische reiniging van matrassen en bedden",
+      prijs: "Vanaf €55"
     }
   ];
 
@@ -77,6 +82,24 @@ const Index = () => {
     }
   ];
 
+  const garanties = [
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "100% Tevredenheidsgarantie",
+      description: "Niet tevreden? Dan maken we het kosteloos opnieuw!"
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "24/7 Spoedhulp",
+      description: "Ook in het weekend en 's avonds beschikbaar"
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Erkend & Verzekerd",
+      description: "Volledig verzekerd bedrijf met 10+ jaar ervaring"
+    }
+  ];
+
   const handleWhatsApp = () => {
     window.open("https://wa.me/31612345678?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
   };
@@ -112,9 +135,12 @@ const Index = () => {
                 <Mail className="w-4 h-4" />
                 <span>info@diepclean.nl</span>
               </div>
-              <Button onClick={handleCall} className="bg-blue-600 hover:bg-blue-700">
-                Bel Nu
-              </Button>
+              <OfferteDialog>
+                <Button className="bg-blue-600 hover:bg-blue-700">
+                  <Calculator className="w-4 h-4 mr-2" />
+                  Gratis Offerte
+                </Button>
+              </OfferteDialog>
             </div>
           </div>
         </div>
@@ -132,6 +158,15 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <OfferteDialog>
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+              >
+                <Calculator className="w-5 h-5 mr-2" />
+                Gratis Offerte
+              </Button>
+            </OfferteDialog>
             <Button 
               size="lg" 
               onClick={handleWhatsApp}
@@ -168,8 +203,25 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Garanties Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {garanties.map((garantie, index) => (
+              <div key={index} className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
+                  {garantie.icon}
+                </div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">{garantie.title}</h4>
+                <p className="text-gray-600">{garantie.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h3 className="text-4xl font-bold text-gray-800 mb-4">Onze Services</h3>
@@ -180,19 +232,19 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow border-2 hover:border-blue-200">
+              <Card key={index} className="hover:shadow-lg transition-shadow border-2 hover:border-blue-200 bg-white">
                 <CardContent className="p-8 text-center">
                   <div className="text-blue-600 mb-4 flex justify-center">
                     {service.icon}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-4">{service.title}</h4>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  <Button 
-                    onClick={handleWhatsApp}
-                    className="bg-green-500 hover:bg-green-600 w-full"
-                  >
-                    Offerte Aanvragen
-                  </Button>
+                  <h4 className="text-xl font-bold text-gray-800 mb-2">{service.title}</h4>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <div className="text-2xl font-bold text-green-600 mb-4">{service.prijs}</div>
+                  <OfferteDialog>
+                    <Button className="bg-green-500 hover:bg-green-600 w-full">
+                      Offerte Aanvragen
+                    </Button>
+                  </OfferteDialog>
                 </CardContent>
               </Card>
             ))}
@@ -298,6 +350,34 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-green-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-4xl font-bold mb-6">Klaar voor een Gratis Offerte?</h3>
+          <p className="text-xl mb-8 max-w-2xl mx-auto">
+            Geen verborgen kosten, geen verplichtingen. Binnen 2 uur een offerte op maat in uw WhatsApp.
+          </p>
+          <OfferteDialog>
+            <Button 
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg mr-4"
+            >
+              <Calculator className="w-6 h-6 mr-2" />
+              Start Offerte Aanvraag
+            </Button>
+          </OfferteDialog>
+          <Button 
+            size="lg"
+            onClick={handleWhatsApp}
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg"
+          >
+            <MessageCircle className="w-6 h-6 mr-2" />
+            Direct Contact
+          </Button>
         </div>
       </section>
 
