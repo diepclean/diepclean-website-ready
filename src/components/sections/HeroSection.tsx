@@ -27,7 +27,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               <OfferteDialog>
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-lg"
                 >
                   <Calculator className="w-5 h-5 mr-2" />
                   Gratis Offerte
@@ -36,7 +36,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               <Button 
                 size="lg" 
                 onClick={onWhatsApp}
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg"
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg shadow-lg"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Contact
@@ -45,7 +45,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
                 size="lg" 
                 variant="outline"
                 onClick={onCall}
-                className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 text-lg shadow-lg"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Bel Direct
@@ -70,14 +70,14 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-300">
               <img 
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80" 
-                alt="Schone moderne woonkamer met professioneel gereinigde meubels"
+                src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=800&q=80" 
+                alt="Professionele meubel- en tapijtreiniging in actie"
                 className="w-full h-96 object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-500">
               <div className="text-sm text-gray-600">Resultaat na reiniging</div>
               <div className="text-lg font-semibold text-green-600">Als nieuw!</div>
             </div>
