@@ -1,5 +1,5 @@
 
-import { Droplets, Car, Bed, PawPrint, Sofa, Stairs } from "lucide-react";
+import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -21,7 +21,7 @@ export const ServicesSection = () => {
       features: ["Extractie methode", "Snelle droging", "Allergenen verwijdering"]
     },
     {
-      icon: <Stairs className="w-8 h-8" />,
+      icon: <Home className="w-8 h-8" />,
       title: "Trapreiniging",
       description: "Specialistische reiniging van trapbekleding en trapleuningen",
       image: "https://images.unsplash.com/photo-1599311239875-94b8b3ef54d4?auto=format&fit=crop&w=400&q=80",
