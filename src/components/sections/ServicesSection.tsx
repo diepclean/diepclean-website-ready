@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { OfferteDialog } from "@/components/OfferteForm";
 import { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export const ServicesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,13 +63,42 @@ export const ServicesSection = () => {
   const beforeAfterSlides = [
     {
       title: "Hoekbank Reiniging",
-      before: "/lovable-uploads/de3cfa5c-6d2a-4a87-a04e-4ced357ae2a0.png",
-      after: "/lovable-uploads/ca4fcad4-87a8-40d6-ad6c-6c93de8ae248.png"
+      before: "/lovable-uploads/66cd836e-690f-479a-bee9-d025cb74823c.png",
+      after: "/lovable-uploads/82a1bf7a-87be-4f91-b794-69dbfc5d440c.png"
     },
     {
       title: "Moderne Bank Reiniging", 
-      before: "/lovable-uploads/1b63c9d2-7c42-42f0-bbb7-1357a1bf3542.png",
-      after: "/lovable-uploads/c83e277a-ac31-47e4-91a0-9ceb541251af.png"
+      before: "/lovable-uploads/24ee282d-dbee-405e-b117-dcaaa28a6ea3.png",
+      after: "/lovable-uploads/442b9a57-a2cc-4d29-a416-91c39d5a546e.png"
+    },
+    {
+      title: "Bank Met Chaise Longue", 
+      before: "/lovable-uploads/c7ea61b3-c460-4fb7-8ce9-e48400bad7e0.png",
+      after: "/lovable-uploads/9a33605c-206a-4774-8dbf-ebb44554b144.png"
+    },
+    {
+      title: "L-Vormige Bank Reiniging", 
+      before: "/lovable-uploads/798740fc-b765-42c5-a763-86714aec273d.png",
+      after: "/lovable-uploads/32255eac-2a64-423d-ba0d-67c6f1cdb734.png"
+    }
+  ];
+
+  const cities = [
+    {
+      name: "Amsterdam",
+      description: "Reiniging in heel Amsterdam"
+    },
+    {
+      name: "Rotterdam",
+      description: "Service beschikbaar in Rotterdam"
+    },
+    {
+      name: "Den Haag",
+      description: "Professionele reiniging in Den Haag"
+    },
+    {
+      name: "Utrecht",
+      description: "Snelle service in Utrecht en omgeving"
     }
   ];
 
@@ -125,7 +161,7 @@ export const ServicesSection = () => {
         </div>
 
         {/* Voor en Na Sectie met Carousel */}
-        <div className="bg-white rounded-3xl p-12 shadow-2xl">
+        <div className="bg-white rounded-3xl p-12 shadow-2xl mb-20">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-gray-800 mb-4">Voor & Na Resultaten</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -213,6 +249,42 @@ export const ServicesSection = () => {
               >
                 <Calculator className="w-6 h-6 mr-3" />
                 Ook zo'n resultaat? Vraag offerte aan!
+              </Button>
+            </OfferteDialog>
+          </div>
+        </div>
+
+        {/* Waarom DiepClean Sectie met Steden */}
+        <div className="bg-white rounded-3xl p-12 shadow-2xl">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-gray-800 mb-4">Waarom DiepClean.nl?</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Wij onderscheiden ons door onze professionele aanpak en uitstekende service
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="text-center bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl shadow-lg">
+              <div className="text-4xl font-bold text-blue-600 mb-2">5+</div>
+              <div className="text-xl text-gray-700">Jarenlange Ervaring</div>
+            </div>
+
+            {cities.map((city, index) => (
+              <div key={index} className="text-center bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl shadow-lg">
+                <div className="text-2xl font-bold text-blue-600 mb-2">{city.name}</div>
+                <div className="text-gray-700">{city.description}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <OfferteDialog>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-xl shadow-xl rounded-xl"
+              >
+                <Calculator className="w-6 h-6 mr-3" />
+                Vraag nu een vrijblijvende offerte aan
               </Button>
             </OfferteDialog>
           </div>
