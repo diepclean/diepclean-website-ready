@@ -56,18 +56,13 @@ export const ServicesSection = () => {
   const beforeAfterSlides = [
     {
       title: "Hoekbank Reiniging",
-      before: "/lovable-uploads/5848e504-b92d-41ea-8484-9f50c51736a7.png",
-      after: "/lovable-uploads/3345aa2a-9676-4c6f-8165-3094f0b61e64.png"
+      before: "/lovable-uploads/de3cfa5c-6d2a-4a87-a04e-4ced357ae2a0.png",
+      after: "/lovable-uploads/ca4fcad4-87a8-40d6-ad6c-6c93de8ae248.png"
     },
     {
       title: "Moderne Bank Reiniging", 
-      before: "/lovable-uploads/e56a3918-1b53-4a21-8e0a-0077dc126ec0.png",
-      after: "/lovable-uploads/bfb40231-b2ac-47db-918d-12435e022e1b.png"
-    },
-    {
-      title: "Grote Hoeksectie Reiniging",
-      before: "/lovable-uploads/f7fe24b8-647f-4401-88df-bc13759437e5.png",
-      after: "/lovable-uploads/a7abe80d-5fb9-4661-aef3-9164141235ea.png"
+      before: "/lovable-uploads/1b63c9d2-7c42-42f0-bbb7-1357a1bf3542.png",
+      after: "/lovable-uploads/c83e277a-ac31-47e4-91a0-9ceb541251af.png"
     }
   ];
 

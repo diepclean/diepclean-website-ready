@@ -50,18 +50,14 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">500+</div>
+              <div className="text-4xl font-bold text-blue-600">300+</div>
               <div className="text-gray-600 text-lg">Tevreden Klanten</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600">24/7</div>
               <div className="text-gray-600 text-lg">Service Beschikbaar</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">Eerst Test</div>
-              <div className="text-gray-600 text-lg">Resultaat Vooraf Zien</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-600">5+</div>
