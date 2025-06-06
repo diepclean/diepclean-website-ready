@@ -4,13 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { OfferteDialog } from "@/components/OfferteForm";
 import { useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 export const ServicesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -86,19 +79,23 @@ export const ServicesSection = () => {
   const cities = [
     {
       name: "Amsterdam",
-      description: "Reiniging in heel Amsterdam"
+      description: "Reiniging in heel Amsterdam",
+      image: "/lovable-uploads/58a4c6a5-c0d4-43ee-9f24-8982998d8f6b.png"
     },
     {
       name: "Rotterdam",
-      description: "Service beschikbaar in Rotterdam"
+      description: "Service beschikbaar in Rotterdam",
+      image: "/lovable-uploads/d9f7ca2c-e6b3-4abb-b66f-aee4736f18ff.png"
     },
     {
       name: "Den Haag",
-      description: "Professionele reiniging in Den Haag"
+      description: "Professionele reiniging in Den Haag",
+      image: "/lovable-uploads/46945a64-cf88-4e50-860a-1a00af816f5a.png"
     },
     {
       name: "Utrecht",
-      description: "Snelle service in Utrecht en omgeving"
+      description: "Snelle service in Utrecht en omgeving",
+      image: "/lovable-uploads/5bc2263c-99f2-4c3a-aef1-2739c61f81d9.png"
     }
   ];
 
@@ -254,25 +251,26 @@ export const ServicesSection = () => {
           </div>
         </div>
 
-        {/* Waarom DiepClean Sectie met Steden */}
+        {/* Wij zijn werkzaam in diverse regio Sectie */}
         <div className="bg-white rounded-3xl p-12 shadow-2xl">
           <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold text-gray-800 mb-4">Waarom DiepClean.nl?</h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Wij onderscheiden ons door onze professionele aanpak en uitstekende service
-            </p>
+            <h3 className="text-4xl font-bold text-gray-800 mb-4">Wij zijn werkzaam in diverse regio</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl shadow-lg">
-              <div className="text-4xl font-bold text-blue-600 mb-2">5+</div>
-              <div className="text-xl text-gray-700">Jarenlange Ervaring</div>
-            </div>
-
             {cities.map((city, index) => (
-              <div key={index} className="text-center bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-2xl shadow-lg">
-                <div className="text-2xl font-bold text-blue-600 mb-2">{city.name}</div>
-                <div className="text-gray-700">{city.description}</div>
+              <div key={index} className="relative overflow-hidden rounded-2xl shadow-lg group">
+                <img 
+                  src={city.image}
+                  alt={`DiepClean in ${city.name}`}
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                  <div className="p-6 text-white">
+                    <h4 className="text-2xl font-bold mb-1">{city.name}</h4>
+                    <p className="text-sm text-gray-200">{city.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
