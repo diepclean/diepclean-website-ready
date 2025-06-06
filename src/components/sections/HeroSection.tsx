@@ -60,11 +60,11 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               <div className="text-gray-600 text-lg">Service Beschikbaar</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600">100%</div>
-              <div className="text-gray-600 text-lg">Tevredenheidsgarantie</div>
+              <div className="text-4xl font-bold text-blue-600">Eerst Test</div>
+              <div className="text-gray-600 text-lg">Resultaat Vooraf Zien</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600">10+</div>
+              <div className="text-4xl font-bold text-green-600">5+</div>
               <div className="text-gray-600 text-lg">Jaar Ervaring</div>
             </div>
           </div>

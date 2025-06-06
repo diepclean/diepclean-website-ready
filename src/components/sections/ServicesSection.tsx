@@ -1,54 +1,83 @@
 
-import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator } from "lucide-react";
+import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { OfferteDialog } from "@/components/OfferteForm";
+import { useState } from "react";
 
 export const ServicesSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const services = [
     {
       icon: <Sofa className="w-8 h-8" />,
       title: "Meubelreiniging",
       description: "Professionele reiniging van banken, stoelen en andere stoffering",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/d6e39dec-02a3-4ebe-976b-5c889ad7fdf3.png",
       features: ["Diepe reiniging", "Vlekverwijdering", "Geurbestrijding"]
     },
     {
       icon: <Droplets className="w-8 h-8" />,
       title: "Tapijtreiniging", 
       description: "Grondige reiniging van tapijten en vloerkleden van alle maten",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/f12addc9-052a-4293-976c-66b349bfd745.png",
       features: ["Extractie methode", "Snelle droging", "Allergenen verwijdering"]
     },
     {
       icon: <Home className="w-8 h-8" />,
       title: "Trapreiniging",
       description: "Specialistische reiniging van trapbekleding en trapleuningen",
-      image: "https://images.unsplash.com/photo-1599311239875-94b8b3ef54d4?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/a8d470f5-33d3-48e9-83c3-743b90a6ead2.png",
       features: ["Veilige toegang", "Grondige reiniging", "Snelle service"]
     },
     {
       icon: <Car className="w-8 h-8" />,
       title: "Auto Interieur",
       description: "Complete reiniging van autostoelen, vloermatten en interieur",
-      image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/b8450079-1c4d-4b4a-b08a-fe9d73108543.png",
       features: ["Lederen stoelen", "Stoffering", "Dashboard reiniging"]
     },
     {
       icon: <PawPrint className="w-8 h-8" />,
       title: "Dierlijke Geuren",
       description: "Effectieve behandeling tegen hardnekkige diergeuren en vlekken",
-      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/d4c95481-e883-4552-9418-0f9d0df5e087.png",
       features: ["Enzymatische reiniging", "Geurbestrijding", "Hygiënische behandeling"]
     },
     {
       icon: <Bed className="w-8 h-8" />,
       title: "Matrasreiniging",
       description: "Hygiënische en grondige reiniging voor een gezonde nachtrust",
-      image: "https://images.unsplash.com/photo-1631049035182-249067d7618e?auto=format&fit=crop&w=400&q=80",
+      image: "/lovable-uploads/c3ee6927-2469-4aee-95a3-65bbc645ce7f.png",
       features: ["Anti-allergie", "Vlekverwijdering", "Desinfectie"]
     }
   ];
+
+  const beforeAfterSlides = [
+    {
+      title: "Hoekbank Reiniging",
+      before: "/lovable-uploads/5848e504-b92d-41ea-8484-9f50c51736a7.png",
+      after: "/lovable-uploads/3345aa2a-9676-4c6f-8165-3094f0b61e64.png"
+    },
+    {
+      title: "Moderne Bank Reiniging", 
+      before: "/lovable-uploads/e56a3918-1b53-4a21-8e0a-0077dc126ec0.png",
+      after: "/lovable-uploads/bfb40231-b2ac-47db-918d-12435e022e1b.png"
+    },
+    {
+      title: "Grote Hoeksectie Reiniging",
+      before: "/lovable-uploads/f7fe24b8-647f-4401-88df-bc13759437e5.png",
+      after: "/lovable-uploads/a7abe80d-5fb9-4661-aef3-9164141235ea.png"
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % beforeAfterSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + beforeAfterSlides.length) % beforeAfterSlides.length);
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -100,7 +129,7 @@ export const ServicesSection = () => {
           ))}
         </div>
 
-        {/* Voor en Na Sectie */}
+        {/* Voor en Na Sectie met Carousel */}
         <div className="bg-white rounded-3xl p-12 shadow-2xl">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-gray-800 mb-4">Voor & Na Resultaten</h3>
@@ -110,110 +139,74 @@ export const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Voor & Na Set 1 */}
-            <div className="space-y-6">
-              <h4 className="text-2xl font-semibold text-center text-gray-800">Hoekbank Reiniging</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/5848e504-b92d-41ea-8484-9f50c51736a7.png" 
-                      alt="Voor reiniging - vervuilde hoekbank"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      VOOR
+          <div className="relative max-w-4xl mx-auto">
+            {/* Carousel Container */}
+            <div className="overflow-hidden rounded-2xl">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {beforeAfterSlides.map((slide, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="space-y-6 px-4">
+                      <h4 className="text-2xl font-semibold text-center text-gray-800">{slide.title}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="text-center">
+                          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                            <img 
+                              src={slide.before}
+                              alt="Voor reiniging"
+                              className="w-full h-64 object-cover"
+                            />
+                            <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              VOOR
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                            <img 
+                              src={slide.after}
+                              alt="Na reiniging"
+                              className="w-full h-64 object-cover"
+                            />
+                            <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                              NA
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/3345aa2a-9676-4c6f-8165-3094f0b61e64.png" 
-                      alt="Na reiniging - schone hoekbank"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      NA
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            {/* Voor & Na Set 2 */}
-            <div className="space-y-6">
-              <h4 className="text-2xl font-semibold text-center text-gray-800">Moderne Bank Reiniging</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/e56a3918-1b53-4a21-8e0a-0077dc126ec0.png" 
-                      alt="Voor reiniging - vervuilde moderne bank"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      VOOR
-                    </div>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/bfb40231-b2ac-47db-918d-12435e022e1b.png" 
-                      alt="Na reiniging - schone moderne bank"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      NA
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+            >
+              <ChevronLeft className="w-6 h-6 text-gray-600" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+            >
+              <ChevronRight className="w-6 h-6 text-gray-600" />
+            </button>
 
-            {/* Voor & Na Set 3 */}
-            <div className="space-y-6 lg:col-span-2">
-              <h4 className="text-2xl font-semibold text-center text-gray-800">Grote Hoeksectie Reiniging</h4>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/f7fe24b8-647f-4401-88df-bc13759437e5.png" 
-                      alt="Voor reiniging - grote hoeksectie met vlekken"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      VOOR
-                    </div>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/82fac395-f36b-407a-9d7d-61dd3f0efafe.png" 
-                      alt="Na reiniging - grote hoeksectie volledig schoon"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      NA
-                    </div>
-                  </div>
-                </div>
-                <div className="text-center">
-                  <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="/lovable-uploads/7295c6a1-bcc0-433e-bb43-15aed506be59.png" 
-                      alt="Eindresultaat - perfect gereinigde hoeksectie"
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      RESULTAAT
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {/* Dots Indicator */}
+            <div className="flex justify-center space-x-2 mt-8">
+              {beforeAfterSlides.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
+                />
+              ))}
             </div>
           </div>
 

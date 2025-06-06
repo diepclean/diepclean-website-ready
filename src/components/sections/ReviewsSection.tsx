@@ -57,7 +57,7 @@ export const ReviewsSection = () => {
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
             ))}
-            <span className="text-xl font-semibold text-gray-700 ml-2">4.9/5 (127 reviews)</span>
+            <span className="text-xl font-semibold text-gray-700 ml-2">4.9/5 (47 reviews)</span>
           </div>
         </div>
 

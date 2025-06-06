@@ -5,8 +5,8 @@ export const GuaranteesSection = () => {
   const garanties = [
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "100% Tevredenheidsgarantie",
-      description: "Niet tevreden? Dan maken we het kosteloos opnieuw!"
+      title: "Eerst een test",
+      description: "Zodat u het resultaat vooraf ziet"
     },
     {
       icon: <Clock className="w-6 h-6" />,
@@ -16,7 +16,7 @@ export const GuaranteesSection = () => {
     {
       icon: <Award className="w-6 h-6" />,
       title: "Erkend & Verzekerd",
-      description: "Volledig verzekerd bedrijf met 10+ jaar ervaring"
+      description: "Volledig verzekerd bedrijf met 5+ jaar ervaring"
     }
   ];
 
