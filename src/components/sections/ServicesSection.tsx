@@ -99,6 +99,29 @@ export const ServicesSection = () => {
     }
   ];
 
+  const whyChooseUs = [
+    {
+      image: "/lovable-uploads/08a0b9b5-e3fd-4767-9bd1-f2a1a3136c65.png",
+      title: "Eco-vriendlijke Methoden",
+      description: "Wij gebruiken alleen milieuvriendelijke en veilige reinigingsproducten die effectief zijn maar geen schade toebrengen aan uw gezondheid of het milieu."
+    },
+    {
+      image: "/lovable-uploads/32142e7d-e7ae-4cb0-9a3f-dd76713ef777.png",
+      title: "Jarenlange Ervaring",
+      description: "Meer dan 5 jaar ervaring in professionelle reiniging in de Randstad. Onze expertise garandeert perfecte resultaten bij elke klus."
+    },
+    {
+      image: "/lovable-uploads/d369f03f-059b-4f19-a0b6-38a985f726b4.png",
+      title: "24/7 Bereikbaar",
+      description: "Wij zijn altijd bereikbaar voor spoedeisende reinigingsklussen en bieden flexibele afspraken die bij uw schema passen."
+    },
+    {
+      image: "/lovable-uploads/74dc2745-772c-48ae-ae92-512113b9f77b.png",
+      title: "Gratis Offerte & Garantie",
+      description: "Krijg binnen 24 uur een vrijblijvende offerte op maat. Geen verborgen kosten, altijd transparent. Met 100% tevredenheidsgarantie op al onze diensten"
+    }
+  ];
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % beforeAfterSlides.length);
   };
@@ -155,6 +178,46 @@ export const ServicesSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Waarom DiepClean.nl Sectie */}
+        <div className="bg-white rounded-3xl p-12 shadow-2xl mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-gray-800 mb-4">Waarom DiepClean.nl</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ontdek waarom klanten in de Randstad kiezen voor onze professionele reinigingsdiensten
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {whyChooseUs.map((item, index) => (
+              <div key={index} className="flex items-start space-x-6 p-6 rounded-xl hover:bg-gray-50 transition-colors duration-300">
+                <div className="flex-shrink-0">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-20 h-20 object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-gray-800 mb-3">{item.title}</h4>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <OfferteDialog>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-xl shadow-xl rounded-xl"
+              >
+                <Calculator className="w-6 h-6 mr-3" />
+                Overtuigd? Vraag nu offerte aan!
+              </Button>
+            </OfferteDialog>
+          </div>
         </div>
 
         {/* Voor en Na Sectie met Carousel */}
