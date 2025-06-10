@@ -1,4 +1,3 @@
-
 import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -246,6 +245,104 @@ export const ServicesSection = () => {
               >
                 <Calculator className="w-6 h-6 mr-3" />
                 Ook zo'n resultaat? Vraag offerte aan!
+              </Button>
+            </OfferteDialog>
+          </div>
+        </div>
+
+        {/* Waarom DiepClean.nl Sectie */}
+        <div className="bg-white rounded-3xl p-12 shadow-2xl mb-20">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-gray-800 mb-4">Waarom DiepClean.nl?</h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Ontdek waarom zoveel klanten voor ons kiezen als hun vertrouwde reinigingspartner
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            {/* Eco-vriendelijke Methoden - foto 1 positie */}
+            <div className="flex items-start space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src="/lovable-uploads/1cae3572-4d54-4cf4-91d5-083f1f3a328d.png"
+                  alt="Eco-vriendelijke Methoden"
+                  className="w-24 h-24 object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-gray-800 mb-3">Eco-vriendelijke Methoden</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Wij gebruiken alleen milieuvriendelijke en veilige reinigingsproducten 
+                  die effectief zijn maar geen schade toebrengen aan uw gezondheid of 
+                  het milieu.
+                </p>
+              </div>
+            </div>
+
+            {/* Jarenlange Ervaring - foto 2 positie */}
+            <div className="flex items-start space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src="/lovable-uploads/fdd95c47-6e15-41e5-83d7-8197d9eb7615.png"
+                  alt="Jarenlange Ervaring"
+                  className="w-24 h-24 object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-gray-800 mb-3">Jarenlange Ervaring</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Meer dan 5 jaar ervaring in professionele reiniging in de Randstad. 
+                  Onze expertise garandeert perfecte resultaten bij elke klus.
+                </p>
+              </div>
+            </div>
+
+            {/* 24/7 Bereikbaar - foto 3 positie */}
+            <div className="flex items-start space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src="/lovable-uploads/3c45cf2f-c03a-4088-b054-c310f6c04017.png"
+                  alt="24/7 Bereikbaar"
+                  className="w-24 h-24 object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-gray-800 mb-3">24/7 Bereikbaar</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Wij zijn altijd bereikbaar voor spoedeisende reinigingsklussen en bieden 
+                  flexibele afspraken die bij uw schema passen.
+                </p>
+              </div>
+            </div>
+
+            {/* Dierenvriendelijk - foto 4 positie (kitten blijft) */}
+            <div className="flex items-start space-x-6">
+              <div className="flex-shrink-0">
+                <img 
+                  src="/lovable-uploads/479c3853-5a19-48c2-a567-30a66c4a3605.png"
+                  alt="Dierenvriendelijk"
+                  className="w-24 h-24 object-cover rounded-xl"
+                />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-gray-800 mb-3">Dierenvriendelijk</h4>
+                <p className="text-gray-600 leading-relaxed">
+                  Onze producten en methoden zijn volledig veilig voor huisdieren. 
+                  Uw viervoeters kunnen direct na de reiniging weer van hun 
+                  schone meubels genieten.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <OfferteDialog>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-xl shadow-xl rounded-xl"
+              >
+                <Calculator className="w-6 h-6 mr-3" />
+                Overtuigd? Vraag direct een offerte aan!
               </Button>
             </OfferteDialog>
           </div>
