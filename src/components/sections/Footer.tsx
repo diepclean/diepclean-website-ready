@@ -18,7 +18,7 @@ export const Footer = () => {
           
           <div className="text-center md:text-right">
             <p className="text-sm">© 2024 DiepClean.nl - Alle rechten voorbehouden</p>
-            <p className="text-xs text-gray-400">BTW: NL123456789B01 | KvK: 12345678</p>
+            <p className="text-xs text-gray-400">BTW: NL002503646B68 | KvK: 72489324</p>
           </div>
         </div>
       </div>
