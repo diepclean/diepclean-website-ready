@@ -18,15 +18,15 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
               <div className="space-y-6">
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&w=400&q=80"
-                    alt="Professionele reinigingsspecialist aan het werk"
+                    src="/lovable-uploads/0ce339c8-aae9-4e2f-8e9e-60d74c35e70c.png"
+                    alt="Eco-vriendelijke Methoden"
                     className="w-full h-48 object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80"
-                    alt="Voor en na reiniging resultaten"
+                    src="/lovable-uploads/5ef1fc2b-ee10-4761-b6eb-a5f01b226b3b.png"
+                    alt="Jarenlange Ervaring"
                     className="w-full h-32 object-cover"
                   />
                 </div>
@@ -34,15 +34,15 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
               <div className="space-y-6 pt-8">
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=400&q=80"
-                    alt="Moderne reinigingsapparatuur"
+                    src="/lovable-uploads/739e2d7f-8c58-41cf-a8a7-021f73b4e4b8.png"
+                    alt="24/7 Bereikbaar"
                     className="w-full h-32 object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=400&q=80"
-                    alt="Eco-vriendelijke reinigingsproducten"
+                    src="/lovable-uploads/a2d6c316-ce5f-4a35-a188-9cbe6d806b5e.png"
+                    alt="Gratis Offerte & Garantie"
                     className="w-full h-48 object-cover"
                   />
                 </div>
@@ -51,7 +51,7 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
             
             {/* Floating Badge */}
             <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl transform hover:scale-110 transition-transform duration-300">
-              10+ Jaar Ervaring
+              5+ Jaar Ervaring
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
                 </div>
                 <div>
                   <h4 className="text-xl font-semibold text-gray-800 mb-3">Jarenlange Ervaring</h4>
-                  <p className="text-gray-600 leading-relaxed">Meer dan 10 jaar ervaring in professionele reiniging in de Randstad. Onze expertise garandeert perfecte resultaten bij elke klus.</p>
+                  <p className="text-gray-600 leading-relaxed">Meer dan 5 jaar ervaring in professionele reiniging in de Randstad. Onze expertise garandeert perfecte resultaten bij elke klus.</p>
                 </div>
               </div>
 
