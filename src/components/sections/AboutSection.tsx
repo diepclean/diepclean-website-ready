@@ -18,15 +18,15 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
               <div className="space-y-6">
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/0ce339c8-aae9-4e2f-8e9e-60d74c35e70c.png"
-                    alt="Eco-vriendelijke Methoden"
+                    src="/lovable-uploads/0bc50054-dbee-4f1a-b8cb-e2d4b6c7eb3a.png"
+                    alt="Professionele bankreiniging"
                     className="w-full h-48 object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/5ef1fc2b-ee10-4761-b6eb-a5f01b226b3b.png"
-                    alt="Jarenlange Ervaring"
+                    src="/lovable-uploads/be5c5156-c5a0-4f44-9230-9810b51e17b9.png"
+                    alt="Matras reiniging"
                     className="w-full h-32 object-cover"
                   />
                 </div>
@@ -34,15 +34,15 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
               <div className="space-y-6 pt-8">
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/739e2d7f-8c58-41cf-a8a7-021f73b4e4b8.png"
-                    alt="24/7 Bereikbaar"
+                    src="/lovable-uploads/e8db6f1b-b6a4-4185-89f9-bc42c1ceb2f1.png"
+                    alt="Auto interieur reiniging"
                     className="w-full h-32 object-cover"
                   />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/a2d6c316-ce5f-4a35-a188-9cbe6d806b5e.png"
-                    alt="Gratis Offerte & Garantie"
+                    src="/lovable-uploads/93112d0d-3515-40d1-9d99-b7aff85c4880.png"
+                    alt="Tapijt reiniging"
                     className="w-full h-48 object-cover"
                   />
                 </div>
