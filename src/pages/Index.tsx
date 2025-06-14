@@ -22,13 +22,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <HeroSection onWhatsApp={handleWhatsApp} onCall={handleCall} />
+      <div id="home">
+        <HeroSection onWhatsApp={handleWhatsApp} onCall={handleCall} />
+      </div>
       <GuaranteesSection />
-      <ServicesSection />
-      <ReviewsSection />
-      <AboutSection onWhatsApp={handleWhatsApp} onCall={handleCall} />
+      <div id="diensten">
+        <ServicesSection />
+      </div>
+      <div id="reviews">
+        <ReviewsSection />
+      </div>
+      <div id="over-ons">
+        <AboutSection onWhatsApp={handleWhatsApp} onCall={handleCall} />
+      </div>
       <CTASection onWhatsApp={handleWhatsApp} />
-      <ContactSection onWhatsApp={handleWhatsApp} />
+      <div id="contact">
+        <ContactSection onWhatsApp={handleWhatsApp} />
+      </div>
       <Footer />
       <FloatingWhatsApp onWhatsApp={handleWhatsApp} />
     </div>

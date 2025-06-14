@@ -1,9 +1,25 @@
 
-import { Phone, Mail, Calculator } from "lucide-react";
+import { Phone, Mail, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 export const Header = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
@@ -18,6 +34,59 @@ export const Header = () => {
               <h1 className="text-2xl font-bold text-blue-600">DiepClean.nl</h1>
               <p className="text-sm text-green-600">Betaalbaar & Ecologisch</p>
             </div>
+          </div>
+
+          {/* Navigation Menu */}
+          <div className="hidden lg:flex">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('home')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('diensten')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Diensten
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('reviews')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Reviews
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('over-ons')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Over Ons
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('contact')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Contact
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
