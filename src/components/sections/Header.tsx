@@ -1,4 +1,3 @@
-
 import { Phone, Mail, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -32,7 +31,7 @@ export const Header = () => {
             />
             <div>
               <h1 className="text-2xl font-bold text-blue-600">DiepClean.nl</h1>
-              <p className="text-sm text-green-600">Betaalbaar & Ecologisch</p>
+              <p className="text-sm" style={{ color: '#16a34a' }}>Betaalbaar & Ecologisch</p>
             </div>
           </div>
 
