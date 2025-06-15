@@ -1,4 +1,3 @@
-
 import { Phone, MessageCircle, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -51,13 +50,12 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               WhatsApp Contact
             </Button>
             <Button 
-              size="lg" 
-              variant="outline"
+              size="lg"
               onClick={onCall}
-              className="border-3 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-6 text-xl shadow-xl rounded-xl"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 text-xl shadow-xl rounded-xl"
             >
               <Phone className="w-6 h-6 mr-3" />
-              Bel Direct: 06-12345678
+              Bel Direct: 06 12345678
             </Button>
           </div>
 
