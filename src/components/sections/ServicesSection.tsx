@@ -241,7 +241,7 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-xl shadow-xl rounded-xl"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-12 md:py-6 md:text-xl md:max-w-none"
               >
                 <Calculator className="w-6 h-6 mr-3" />
                 Ook zo'n resultaat? Vraag offerte aan!
