@@ -108,12 +108,12 @@ export const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
-            <div className="text-center bg-green-50 p-3 rounded-lg border border-green-200">
+            <div 
+              className="text-center bg-green-50 p-3 rounded-lg border border-green-200 cursor-pointer hover:bg-green-100 transition-colors"
+              onClick={handleWhatsAppClick}
+            >
               <p className="text-sm font-semibold text-green-800 mb-1">Prijsopgave via WhatsApp</p>
-              <div 
-                className="flex items-center justify-center space-x-2 text-green-700 cursor-pointer hover:text-green-800 transition-colors font-bold text-lg"
-                onClick={handleWhatsAppClick}
-              >
+              <div className="flex items-center justify-center space-x-2 text-green-700 font-bold text-lg">
                 <svg 
                   className="w-5 h-5" 
                   fill="#25D366" 
