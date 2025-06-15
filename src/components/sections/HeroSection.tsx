@@ -13,7 +13,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
     <section 
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
       }}
     >
       {/* Overlay for better text readability */}
