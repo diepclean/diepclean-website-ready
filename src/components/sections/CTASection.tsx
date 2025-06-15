@@ -27,8 +27,7 @@ export const CTASection = ({ onWhatsApp }: CTASectionProps) => {
         <Button 
           size="lg"
           onClick={onWhatsApp}
-          variant="outline"
-          className="border-white text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900 px-8 py-4 text-lg"
+          className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg"
         >
           <MessageCircle className="w-6 h-6 mr-2" />
           Direct Contact
