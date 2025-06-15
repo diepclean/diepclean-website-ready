@@ -60,6 +60,15 @@ export const Header = () => {
                 <NavigationMenuItem>
                   <NavigationMenuLink
                     className={navigationMenuTriggerStyle()}
+                    onClick={() => scrollToSection('resultaten')}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    Resultaten
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
                     onClick={() => scrollToSection('reviews')}
                     style={{ cursor: 'pointer' }}
                   >

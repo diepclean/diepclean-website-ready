@@ -1,4 +1,3 @@
-
 import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -158,7 +157,7 @@ export const ServicesSection = () => {
         </div>
 
         {/* Voor en Na Sectie met Carousel */}
-        <div className="bg-white rounded-3xl p-12 shadow-2xl mb-20">
+        <div id="resultaten" className="bg-white rounded-3xl p-12 shadow-2xl mb-20">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-gray-800 mb-4">Voor & Na Resultaten</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
