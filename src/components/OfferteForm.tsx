@@ -117,13 +117,14 @@ const OfferteForm = () => {
               <span className="font-medium">06 34 27 37 02</span>
             </div>
           </div>
-          <Button 
-            onClick={() => setIsSubmitted(false)}
-            variant="outline"
-            className="w-full"
-          >
-            Nieuwe Aanvraag
-          </Button>
+          <DialogClose asChild>
+            <Button 
+              variant="outline"
+              className="w-full"
+            >
+              Sluiten
+            </Button>
+          </DialogClose>
         </CardContent>
       </Card>
     );
