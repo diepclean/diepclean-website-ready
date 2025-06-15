@@ -1,4 +1,3 @@
-
 import { Phone, MessageCircle, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -10,8 +9,16 @@ interface HeroSectionProps {
 
 export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-green-50 py-20">
-      <div className="container mx-auto px-4">
+    <section 
+      className="relative py-20 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1721322800607-8c38375eef04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl font-bold text-gray-800 mb-6">
             <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-600">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
