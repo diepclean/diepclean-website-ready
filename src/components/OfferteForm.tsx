@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,6 +28,7 @@ const OfferteForm = () => {
     spoed: false
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
   const services = [
@@ -51,12 +51,43 @@ const OfferteForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendEmail = async (formData: any) => {
+    const emailBody = `
+NIEUWE OFFERTE AANVRAAG - DiepClean.nl
+
+Klantgegevens:
+- Naam: ${formData.naam}
+- Telefoon: ${formData.telefoon}
+- Email: ${formData.email}
+- Postcode: ${formData.postcode}
+
+Service Details:
+- Service: ${formData.service}
+- Oppervlakte: ${formData.oppervlakte}
+- Spoed: ${formData.spoed ? 'JA - binnen 24 uur' : 'Nee'}
+
+Beschrijving:
+${formData.beschrijving}
+
+Verzonden via: DiepClean.nl website
+Tijd: ${new Date().toLocaleString('nl-NL')}
+    `;
+
+    const mailtoLink = `mailto:info@diepclean.nl?subject=Nieuwe Offerte Aanvraag - ${formData.naam}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     
-    // WhatsApp bericht samenstellen
-    const message = `🧽 *GRATIS OFFERTE AANVRAAG*
-    
+    try {
+      // Send email
+      await sendEmail(formData);
+      
+      // WhatsApp bericht samenstellen
+      const message = `🧽 *GRATIS OFFERTE AANVRAAG*
+      
 *Klantgegevens:*
 Naam: ${formData.naam}
 Telefoon: ${formData.telefoon}
@@ -73,14 +104,23 @@ ${formData.beschrijving}
 
 *Verzonden via DiepClean.nl*`;
 
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/31612345678?text=${encodedMessage}`, '_blank');
-    
-    setIsSubmitted(true);
-    toast({
-      title: "Offerte aanvraag verzonden!",
-      description: "U wordt doorgestuurd naar WhatsApp. Wij nemen binnen 2 uur contact op.",
-    });
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/31634273702?text=${encodedMessage}`, '_blank');
+      
+      setIsSubmitted(true);
+      toast({
+        title: "Offerte aanvraag verzonden!",
+        description: "Email en WhatsApp bericht zijn verzonden. Wij nemen binnen 2 uur contact op.",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Er is iets misgegaan. Probeer het opnieuw.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -90,7 +130,7 @@ ${formData.beschrijving}
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h3 className="text-xl font-bold text-gray-800 mb-2">Bedankt!</h3>
           <p className="text-gray-600 mb-4">
-            Uw offerte aanvraag is verzonden. Wij nemen binnen 2 uur contact met u op.
+            Uw offerte aanvraag is verzonden via email en WhatsApp. Wij nemen binnen 2 uur contact met u op.
           </p>
           <Button 
             onClick={() => setIsSubmitted(false)}
@@ -252,6 +292,7 @@ ${formData.beschrijving}
             <h4 className="font-semibold text-blue-800 mb-2">Wat krijgt u?</h4>
             <ul className="text-sm text-blue-700 space-y-1">
               <li>✓ Gratis offerte binnen 2 uur</li>
+              <li>✓ Email wordt automatisch naar ons verstuurd</li>
               <li>✓ Transparante prijzen, geen verborgen kosten</li>
               <li>✓ Professioneel advies op maat</li>
               <li>✓ 100% vrijblijvend, geen verplichtingen</li>
@@ -261,9 +302,9 @@ ${formData.beschrijving}
           <Button 
             type="submit" 
             className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg"
-            disabled={!formData.naam || !formData.telefoon || !formData.email || !formData.postcode || !formData.service}
+            disabled={!formData.naam || !formData.telefoon || !formData.email || !formData.postcode || !formData.service || isLoading}
           >
-            📱 Verstuur via WhatsApp
+            {isLoading ? "Versturen..." : "📧 Verstuur Email & WhatsApp"}
           </Button>
         </form>
 
@@ -271,7 +312,7 @@ ${formData.beschrijving}
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-1" />
-              <span>06 12 34 56 78</span>
+              <span>06 34 27 37 02</span>
             </div>
             <div className="flex items-center">
               <Mail className="w-4 h-4 mr-1" />

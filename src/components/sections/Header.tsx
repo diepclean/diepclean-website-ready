@@ -1,7 +1,8 @@
-import { Phone, Mail, Calculator, Menu } from "lucide-react";
+
+import { Phone, Mail, Calculator, Menu, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
-import { trackQuoteConversion } from "@/utils/googleAds";
+import { trackQuoteConversion, trackWhatsAppConversion } from "@/utils/googleAds";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -22,6 +23,11 @@ export const Header = () => {
 
   const handleOfferteClick = () => {
     trackQuoteConversion();
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppConversion();
+    window.open("https://wa.me/31634273702?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
   };
 
   return (
@@ -103,8 +109,11 @@ export const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-6">
-            <div className="flex items-center space-x-2 text-gray-600">
-              <Phone className="w-4 h-4" />
+            <div 
+              className="flex items-center space-x-2 text-gray-600 cursor-pointer hover:text-green-600 transition-colors"
+              onClick={handleWhatsAppClick}
+            >
+              <MessageCircle className="w-4 h-4" />
               <span>06 34 27 37 02</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-600">
