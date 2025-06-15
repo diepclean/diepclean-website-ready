@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,6 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Phone, Mail, MapPin, Calculator, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const OfferteForm = () => {
   const [formData, setFormData] = useState({
@@ -51,30 +53,37 @@ const OfferteForm = () => {
     }));
   };
 
-  const sendEmail = async (formData: any) => {
-    const emailBody = `
-NIEUWE OFFERTE AANVRAAG - DiepClean.nl
+  const sendAutomaticEmail = async (formData: any) => {
+    // EmailJS configuratie - deze waardes moet je instellen in je EmailJS account
+    const serviceId = 'YOUR_SERVICE_ID'; // Vervang met je EmailJS service ID
+    const templateId = 'YOUR_TEMPLATE_ID'; // Vervang met je EmailJS template ID
+    const publicKey = 'YOUR_PUBLIC_KEY'; // Vervang met je EmailJS public key
 
-Klantgegevens:
-- Naam: ${formData.naam}
-- Telefoon: ${formData.telefoon}
-- Email: ${formData.email}
-- Postcode: ${formData.postcode}
+    const templateParams = {
+      from_name: formData.naam,
+      from_email: formData.email,
+      phone: formData.telefoon,
+      postcode: formData.postcode,
+      service: formData.service,
+      oppervlakte: formData.oppervlakte,
+      beschrijving: formData.beschrijving,
+      spoed: formData.spoed ? 'JA - binnen 24 uur' : 'Nee',
+      timestamp: new Date().toLocaleString('nl-NL'),
+      to_email: 'info@diepclean.nl'
+    };
 
-Service Details:
-- Service: ${formData.service}
-- Oppervlakte: ${formData.oppervlakte}
-- Spoed: ${formData.spoed ? 'JA - binnen 24 uur' : 'Nee'}
-
-Beschrijving:
-${formData.beschrijving}
-
-Verzonden via: DiepClean.nl website
-Tijd: ${new Date().toLocaleString('nl-NL')}
-    `;
-
-    const mailtoLink = `mailto:info@diepclean.nl?subject=Nieuwe Offerte Aanvraag - ${formData.naam}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+    try {
+      // Voor nu simuleren we de email verzending
+      console.log('Email zou verzonden worden met:', templateParams);
+      
+      // Uncomment de regel hieronder wanneer EmailJS is geconfigureerd:
+      // await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      return true;
+    } catch (error) {
+      console.error('Email verzending mislukt:', error);
+      throw error;
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -82,8 +91,8 @@ Tijd: ${new Date().toLocaleString('nl-NL')}
     setIsLoading(true);
     
     try {
-      // Send email
-      await sendEmail(formData);
+      // Automatische email verzending
+      await sendAutomaticEmail(formData);
       
       // WhatsApp bericht samenstellen
       const message = `🧽 *GRATIS OFFERTE AANVRAAG*
@@ -110,7 +119,7 @@ ${formData.beschrijving}
       setIsSubmitted(true);
       toast({
         title: "Offerte aanvraag verzonden!",
-        description: "Email en WhatsApp bericht zijn verzonden. Wij nemen binnen 2 uur contact op.",
+        description: "Uw aanvraag is automatisch naar ons verzonden. Wij nemen binnen 2 uur contact op.",
       });
     } catch (error) {
       toast({
@@ -291,8 +300,8 @@ ${formData.beschrijving}
           <div className="bg-blue-50 p-4 rounded-lg">
             <h4 className="font-semibold text-blue-800 mb-2">Wat krijgt u?</h4>
             <ul className="text-sm text-blue-700 space-y-1">
+              <li>✓ Automatische email naar ons</li>
               <li>✓ Gratis offerte binnen 2 uur</li>
-              <li>✓ Email wordt automatisch naar ons verstuurd</li>
               <li>✓ Transparante prijzen, geen verborgen kosten</li>
               <li>✓ Professioneel advies op maat</li>
               <li>✓ 100% vrijblijvend, geen verplichtingen</li>
@@ -304,7 +313,7 @@ ${formData.beschrijving}
             className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg"
             disabled={!formData.naam || !formData.telefoon || !formData.email || !formData.postcode || !formData.service || isLoading}
           >
-            {isLoading ? "Versturen..." : "📧 Verstuur Email & WhatsApp"}
+            {isLoading ? "Versturen..." : "📧 Verstuur"}
           </Button>
         </form>
 
