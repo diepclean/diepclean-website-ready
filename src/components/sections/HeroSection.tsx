@@ -1,3 +1,4 @@
+
 import { Phone, MessageCircle, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -16,7 +17,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
