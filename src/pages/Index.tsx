@@ -9,41 +9,16 @@ import { CTASection } from "@/components/sections/CTASection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Footer } from "@/components/sections/Footer";
 import { FloatingWhatsApp } from "@/components/sections/FloatingWhatsApp";
+import { trackWhatsAppConversion, trackPhoneConversion } from "@/utils/googleAds";
 
 const Index = () => {
   const handleWhatsApp = () => {
-    // Track WhatsApp conversion
-    if (typeof gtag_report_whatsapp_conversion === 'function') {
-      gtag_report_whatsapp_conversion();
-    }
-    
-    // Push event to dataLayer for Google Tag Manager
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
-        'event': 'whatsapp_click',
-        'event_category': 'contact',
-        'event_label': 'whatsapp_contact'
-      });
-    }
-    
+    trackWhatsAppConversion();
     window.open("https://wa.me/31612345678?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
   };
 
   const handleCall = () => {
-    // Track phone conversion
-    if (typeof gtag_report_phone_conversion === 'function') {
-      gtag_report_phone_conversion();
-    }
-    
-    // Push event to dataLayer for Google Tag Manager
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
-        'event': 'phone_click',
-        'event_category': 'contact',
-        'event_label': 'phone_call'
-      });
-    }
-    
+    trackPhoneConversion();
     window.open("tel:+31612345678");
   };
 
