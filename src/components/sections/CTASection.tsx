@@ -2,12 +2,22 @@
 import { MessageCircle, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
+import { trackQuoteConversion, trackWhatsAppConversion } from "@/utils/googleAds";
 
 interface CTASectionProps {
   onWhatsApp: () => void;
 }
 
 export const CTASection = ({ onWhatsApp }: CTASectionProps) => {
+  const handleOfferteClick = () => {
+    trackQuoteConversion();
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppConversion();
+    onWhatsApp();
+  };
+
   return (
     <section className="py-20 bg-gradient-to-br from-blue-600 to-green-600 text-white">
       <div className="container mx-auto px-4 text-center">
@@ -19,6 +29,7 @@ export const CTASection = ({ onWhatsApp }: CTASectionProps) => {
           <Button 
             size="lg"
             className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg mr-4"
+            onClick={handleOfferteClick}
           >
             <Calculator className="w-6 h-6 mr-2" />
             Start Offerte Aanvraag
@@ -26,7 +37,7 @@ export const CTASection = ({ onWhatsApp }: CTASectionProps) => {
         </OfferteDialog>
         <Button 
           size="lg"
-          onClick={onWhatsApp}
+          onClick={handleWhatsAppClick}
           className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg"
         >
           <MessageCircle className="w-6 h-6 mr-2" />

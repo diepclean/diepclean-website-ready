@@ -1,6 +1,8 @@
+
 import { Phone, Mail, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
+import { trackQuoteConversion } from "@/utils/googleAds";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,6 +19,10 @@ export const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleOfferteClick = () => {
+    trackQuoteConversion();
   };
 
   return (
@@ -107,7 +113,7 @@ export const Header = () => {
               <span>info@diepclean.nl</span>
             </div>
             <OfferteDialog>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700" onClick={handleOfferteClick}>
                 <Calculator className="w-4 h-4 mr-2" />
                 Gratis Offerte
               </Button>
