@@ -1,5 +1,5 @@
 
-import { Phone, MessageCircle, Calculator } from "lucide-react";
+import { Phone, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
 
@@ -47,7 +47,11 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#15803d'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#16a34a'}
             >
-              <MessageCircle className="w-6 h-6 mr-3" />
+              <img 
+                src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+                alt="WhatsApp" 
+                className="w-6 h-6 mr-3"
+              />
               WhatsApp Contact
             </Button>
             <Button 

@@ -1,5 +1,4 @@
 
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface FloatingWhatsAppProps {
@@ -14,7 +13,11 @@ export const FloatingWhatsApp = ({ onWhatsApp }: FloatingWhatsAppProps) => {
         className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all"
         size="lg"
       >
-        <MessageCircle className="w-6 h-6" />
+        <img 
+          src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+          alt="WhatsApp" 
+          className="w-6 h-6"
+        />
       </Button>
     </div>
   );

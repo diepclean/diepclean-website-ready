@@ -1,5 +1,5 @@
 
-import { MessageCircle, Calculator } from "lucide-react";
+import { Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
 import { trackQuoteConversion, trackWhatsAppConversion } from "@/utils/googleAds";
@@ -40,7 +40,11 @@ export const CTASection = ({ onWhatsApp }: CTASectionProps) => {
           onClick={handleWhatsAppClick}
           className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg"
         >
-          <MessageCircle className="w-6 h-6 mr-2" />
+          <img 
+            src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+            alt="WhatsApp" 
+            className="w-6 h-6 mr-2"
+          />
           Direct Contact
         </Button>
       </div>

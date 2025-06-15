@@ -1,5 +1,5 @@
 
-import { Phone, Mail, Calculator, Menu, MessageCircle } from "lucide-react";
+import { Phone, Mail, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
 import { trackQuoteConversion, trackWhatsAppConversion } from "@/utils/googleAds";
@@ -113,7 +113,11 @@ export const Header = () => {
               className="flex items-center space-x-2 text-gray-600 cursor-pointer hover:text-green-600 transition-colors"
               onClick={handleWhatsAppClick}
             >
-              <MessageCircle className="w-4 h-4" />
+              <img 
+                src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+                alt="WhatsApp" 
+                className="w-4 h-4"
+              />
               <span>06 34 27 37 02</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-600">

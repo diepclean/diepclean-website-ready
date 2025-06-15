@@ -1,4 +1,5 @@
-import { Phone, MessageCircle, Mail } from "lucide-react";
+
+import { Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ContactSectionProps {
@@ -28,7 +29,11 @@ export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
 
           <div>
             <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <MessageCircle className="w-8 h-8" />
+              <img 
+                src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+                alt="WhatsApp" 
+                className="w-8 h-8"
+              />
             </div>
             <h4 className="text-xl font-semibold mb-2">WhatsApp</h4>
             <p className="text-gray-300">06 34 27 37 02</p>
@@ -51,7 +56,11 @@ export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
             onClick={onWhatsApp}
             className="bg-green-500 hover:bg-green-600 px-8 py-4 text-lg"
           >
-            <MessageCircle className="w-6 h-6 mr-2" />
+            <img 
+              src="/lovable-uploads/301b00cd-c044-4fae-87fa-a1d141d638b0.png" 
+              alt="WhatsApp" 
+              className="w-6 h-6 mr-2"
+            />
             Start WhatsApp Chat
           </Button>
         </div>
