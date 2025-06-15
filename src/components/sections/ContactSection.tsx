@@ -1,4 +1,3 @@
-
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -23,7 +22,7 @@ export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
               <Phone className="w-8 h-8" />
             </div>
             <h4 className="text-xl font-semibold mb-2">Telefoon</h4>
-            <p className="text-gray-300">06 12 34 56 78</p>
+            <p className="text-gray-300">06 34 27 37 02</p>
             <p className="text-sm text-gray-400">24/7 bereikbaar</p>
           </div>
 
@@ -32,7 +31,7 @@ export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
               <MessageCircle className="w-8 h-8" />
             </div>
             <h4 className="text-xl font-semibold mb-2">WhatsApp</h4>
-            <p className="text-gray-300">06 12 34 56 78</p>
+            <p className="text-gray-300">06 34 27 37 02</p>
             <p className="text-sm text-gray-400">Snelle reactie</p>
           </div>
 

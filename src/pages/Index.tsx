@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/sections/Header";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { GuaranteesSection } from "@/components/sections/GuaranteesSection";
@@ -14,12 +13,12 @@ import { trackWhatsAppConversion, trackPhoneConversion } from "@/utils/googleAds
 const Index = () => {
   const handleWhatsApp = () => {
     trackWhatsAppConversion();
-    window.open("https://wa.me/31612345678?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
+    window.open("https://wa.me/31634273702?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
   };
 
   const handleCall = () => {
     trackPhoneConversion();
-    window.open("tel:+31612345678");
+    window.open("tel:+31634273702");
   };
 
   return (

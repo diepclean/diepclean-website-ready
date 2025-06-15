@@ -56,7 +56,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
               className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 text-xl shadow-xl rounded-xl"
             >
               <Phone className="w-6 h-6 mr-3" />
-              Bel Direct: 06 12 34 56 78
+              Bel Direct: 06 34 27 37 02
             </Button>
           </div>
 

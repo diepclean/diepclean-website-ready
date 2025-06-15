@@ -1,4 +1,3 @@
-
 import { Phone, Mail, Calculator, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -106,7 +105,7 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-6">
             <div className="flex items-center space-x-2 text-gray-600">
               <Phone className="w-4 h-4" />
-              <span>06 12 34 56 78</span>
+              <span>06 34 27 37 02</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-600">
               <Mail className="w-4 h-4" />
