@@ -14,7 +14,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-6xl font-bold text-gray-800 mb-6">
-            <span style={{ color: '#4ee612' }}>Professionele</span> <span className="text-blue-600">Reiniging</span> <span style={{ color: '#4ee612' }}>Services</span>
+            <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-600">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
           </h1>
           <p className="text-2xl text-gray-600 mb-8 leading-relaxed">
             DiepClean.nl is uw specialist in meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging. 
