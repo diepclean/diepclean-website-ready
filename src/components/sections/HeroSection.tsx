@@ -1,3 +1,4 @@
+
 import { Phone, MessageCircle, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -41,7 +42,10 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             <Button 
               size="lg" 
               onClick={onWhatsApp}
-              className="bg-green-500 hover:bg-green-600 text-white px-10 py-6 text-xl shadow-xl rounded-xl"
+              className="text-white px-10 py-6 text-xl shadow-xl rounded-xl"
+              style={{ backgroundColor: '#16a34a' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#15803d'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#16a34a'}
             >
               <MessageCircle className="w-6 h-6 mr-3" />
               WhatsApp Contact
@@ -59,15 +63,15 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-700 drop-shadow-md">300+</div>
+              <div className="text-4xl font-bold drop-shadow-md" style={{ color: '#16a34a' }}>300+</div>
               <div className="text-gray-800 text-lg font-medium">Tevreden Klanten</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-700 drop-shadow-md">24/7</div>
+              <div className="text-4xl font-bold drop-shadow-md" style={{ color: '#16a34a' }}>24/7</div>
               <div className="text-gray-800 text-lg font-medium">Service Beschikbaar</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-700 drop-shadow-md">5+</div>
+              <div className="text-4xl font-bold drop-shadow-md" style={{ color: '#16a34a' }}>5+</div>
               <div className="text-gray-800 text-lg font-medium">Jaar Ervaring</div>
             </div>
           </div>
