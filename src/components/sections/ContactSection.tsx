@@ -7,6 +7,10 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/31634273702?text=Hallo,%20ik%20heb%20interesse%20in%20jullie%20reinigingsdiensten", "_blank");
+  };
+
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
@@ -27,7 +31,10 @@ export const ContactSection = ({ onWhatsApp }: ContactSectionProps) => {
             <p className="text-sm text-gray-400">24/7 bereikbaar</p>
           </div>
 
-          <div>
+          <div 
+            className="cursor-pointer hover:bg-gray-800 p-4 rounded-lg transition-colors"
+            onClick={handleWhatsAppClick}
+          >
             <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg 
                 className="w-8 h-8" 
