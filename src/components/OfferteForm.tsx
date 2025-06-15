@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Dialog, 
@@ -14,7 +13,7 @@ import {
   DialogTrigger,
   DialogClose 
 } from "@/components/ui/dialog";
-import { Phone, Mail, MapPin, Calculator, CheckCircle } from "lucide-react";
+import { Phone, Mail, Calculator, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from '@emailjs/browser';
 
@@ -24,10 +23,7 @@ const OfferteForm = () => {
     telefoon: '',
     email: '',
     postcode: '',
-    service: '',
-    oppervlakte: '',
-    beschrijving: '',
-    spoed: false
+    service: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,19 +41,18 @@ const OfferteForm = () => {
     'Anders'
   ];
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+      [name]: value
     }));
   };
 
   const sendAutomaticEmail = async (formData: any) => {
-    // EmailJS configuratie - deze waardes moet je instellen in je EmailJS account
-    const serviceId = 'YOUR_SERVICE_ID'; // Vervang met je EmailJS service ID
-    const templateId = 'YOUR_TEMPLATE_ID'; // Vervang met je EmailJS template ID
-    const publicKey = 'YOUR_PUBLIC_KEY'; // Vervang met je EmailJS public key
+    const serviceId = 'YOUR_SERVICE_ID';
+    const templateId = 'YOUR_TEMPLATE_ID';
+    const publicKey = 'YOUR_PUBLIC_KEY';
 
     const templateParams = {
       from_name: formData.naam,
@@ -65,20 +60,12 @@ const OfferteForm = () => {
       phone: formData.telefoon,
       postcode: formData.postcode,
       service: formData.service,
-      oppervlakte: formData.oppervlakte,
-      beschrijving: formData.beschrijving,
-      spoed: formData.spoed ? 'JA - binnen 24 uur' : 'Nee',
       timestamp: new Date().toLocaleString('nl-NL'),
       to_email: 'info@diepclean.nl'
     };
 
     try {
-      // Voor nu simuleren we de email verzending
       console.log('Email zou verzonden worden met:', templateParams);
-      
-      // Uncomment de regel hieronder wanneer EmailJS is geconfigureerd:
-      // await emailjs.send(serviceId, templateId, templateParams, publicKey);
-      
       return true;
     } catch (error) {
       console.error('Email verzending mislukt:', error);
@@ -91,10 +78,8 @@ const OfferteForm = () => {
     setIsLoading(true);
     
     try {
-      // Automatische email verzending
       await sendAutomaticEmail(formData);
       
-      // WhatsApp bericht samenstellen
       const message = `🧽 *GRATIS OFFERTE AANVRAAG*
       
 *Klantgegevens:*
@@ -103,13 +88,8 @@ Telefoon: ${formData.telefoon}
 Email: ${formData.email}
 Postcode: ${formData.postcode}
 
-*Service Details:*
-Service: ${formData.service}
-Oppervlakte: ${formData.oppervlakte}
-${formData.spoed ? '🚨 SPOED OPDRACHT' : ''}
-
-*Beschrijving:*
-${formData.beschrijving}
+*Gewenste Service:*
+${formData.service}
 
 *Verzonden via DiepClean.nl*`;
 
@@ -154,7 +134,7 @@ ${formData.beschrijving}
   }
 
   return (
-    <Card className="max-w-2xl mx-auto shadow-lg">
+    <Card className="max-w-lg mx-auto shadow-lg">
       <CardHeader className="bg-gradient-to-r from-blue-600 to-green-600 text-white">
         <CardTitle className="text-2xl text-center flex items-center justify-center">
           <Calculator className="w-6 h-6 mr-2" />
@@ -165,159 +145,109 @@ ${formData.beschrijving}
         </p>
       </CardHeader>
       
-      <CardContent className="p-8">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="naam" className="text-sm font-medium text-gray-700">
-                Volledige naam *
-              </Label>
-              <Input
-                id="naam"
-                name="naam"
-                value={formData.naam}
-                onChange={handleInputChange}
-                required
-                className="mt-1"
-                placeholder="Uw voor- en achternaam"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="telefoon" className="text-sm font-medium text-gray-700">
-                Telefoonnummer *
-              </Label>
-              <Input
-                id="telefoon"
-                name="telefoon"
-                type="tel"
-                value={formData.telefoon}
-                onChange={handleInputChange}
-                required
-                className="mt-1"
-                placeholder="06 12 34 56 78"
-              />
-            </div>
+      <CardContent className="p-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <Label htmlFor="naam" className="text-sm font-medium text-gray-700">
+              Volledige naam *
+            </Label>
+            <Input
+              id="naam"
+              name="naam"
+              value={formData.naam}
+              onChange={handleInputChange}
+              required
+              className="mt-1"
+              placeholder="Uw voor- en achternaam"
+            />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="email" className="text-sm font-medium text-gray-700">
-                E-mailadres *
-              </Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="mt-1"
-                placeholder="naam@voorbeeld.nl"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="postcode" className="text-sm font-medium text-gray-700">
-                Postcode *
-              </Label>
-              <Input
-                id="postcode"
-                name="postcode"
-                value={formData.postcode}
-                onChange={handleInputChange}
-                required
-                className="mt-1"
-                placeholder="1234 AB"
-              />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="service" className="text-sm font-medium text-gray-700">
-                Gewenste service *
-              </Label>
-              <select
-                id="service"
-                name="service"
-                value={formData.service}
-                onChange={handleInputChange}
-                required
-                className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                <option value="">Selecteer service</option>
-                {services.map(service => (
-                  <option key={service} value={service}>{service}</option>
-                ))}
-              </select>
-            </div>
-            
-            <div>
-              <Label htmlFor="oppervlakte" className="text-sm font-medium text-gray-700">
-                Geschatte oppervlakte/aantal
-              </Label>
-              <Input
-                id="oppervlakte"
-                name="oppervlakte"
-                value={formData.oppervlakte}
-                onChange={handleInputChange}
-                className="mt-1"
-                placeholder="Bijv. 3-zits bank, 20m², 2 stoelen"
-              />
-            </div>
+          
+          <div>
+            <Label htmlFor="telefoon" className="text-sm font-medium text-gray-700">
+              Telefoonnummer *
+            </Label>
+            <Input
+              id="telefoon"
+              name="telefoon"
+              type="tel"
+              value={formData.telefoon}
+              onChange={handleInputChange}
+              required
+              className="mt-1"
+              placeholder="06 12 34 56 78"
+            />
           </div>
 
           <div>
-            <Label htmlFor="beschrijving" className="text-sm font-medium text-gray-700">
-              Beschrijving van de klus
+            <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+              E-mailadres *
             </Label>
-            <Textarea
-              id="beschrijving"
-              name="beschrijving"
-              value={formData.beschrijving}
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
               onChange={handleInputChange}
+              required
               className="mt-1"
-              rows={4}
-              placeholder="Beschrijf de staat van het meubilair, type vlekken, bijzonderheden, etc."
+              placeholder="naam@voorbeeld.nl"
             />
           </div>
-
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
-              id="spoed"
-              name="spoed"
-              checked={formData.spoed}
-              onChange={handleInputChange}
-              className="rounded border-gray-300"
-            />
-            <Label htmlFor="spoed" className="text-sm text-gray-700">
-              Dit is een spoedopdracht (binnen 24 uur)
+          
+          <div>
+            <Label htmlFor="postcode" className="text-sm font-medium text-gray-700">
+              Postcode *
             </Label>
+            <Input
+              id="postcode"
+              name="postcode"
+              value={formData.postcode}
+              onChange={handleInputChange}
+              required
+              className="mt-1"
+              placeholder="1234 AB"
+            />
           </div>
 
-          <div className="bg-blue-50 p-4 rounded-lg">
+          <div>
+            <Label htmlFor="service" className="text-sm font-medium text-gray-700">
+              Gewenste service *
+            </Label>
+            <select
+              id="service"
+              name="service"
+              value={formData.service}
+              onChange={handleInputChange}
+              required
+              className="mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              <option value="">Selecteer service</option>
+              {services.map(service => (
+                <option key={service} value={service}>{service}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="bg-blue-50 p-4 rounded-lg mt-4">
             <h4 className="font-semibold text-blue-800 mb-2">Wat krijgt u?</h4>
             <ul className="text-sm text-blue-700 space-y-1">
-              <li>✓ Automatische email naar ons</li>
               <li>✓ Gratis offerte binnen 2 uur</li>
               <li>✓ Transparante prijzen, geen verborgen kosten</li>
               <li>✓ Professioneel advies op maat</li>
-              <li>✓ 100% vrijblijvend, geen verplichtingen</li>
+              <li>✓ 100% vrijblijvend</li>
             </ul>
           </div>
 
           <Button 
             type="submit" 
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg"
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg mt-6"
             disabled={!formData.naam || !formData.telefoon || !formData.email || !formData.postcode || !formData.service || isLoading}
           >
             {isLoading ? "Versturen..." : "📧 Verstuur"}
           </Button>
         </form>
 
-        <div className="mt-6 pt-6 border-t border-gray-200">
+        <div className="mt-6 pt-4 border-t border-gray-200">
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-600">
             <div className="flex items-center">
               <Phone className="w-4 h-4 mr-1" />
@@ -340,7 +270,7 @@ export const OfferteDialog = ({ children }: { children: React.ReactNode }) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="sr-only">Gratis Offerte Formulier</DialogTitle>
           <DialogDescription className="sr-only">
