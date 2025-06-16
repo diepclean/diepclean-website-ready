@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    compress: true,
   },
   plugins: [
     react(),
@@ -42,13 +43,5 @@ export default defineConfig(({ mode }) => ({
     },
     // Reduce chunk size warnings
     chunkSizeWarningLimit: 1000,
-  },
-  // Enable gzip compression
-  server: {
-    ...({ mode } === 'development' ? {
-      host: "::",
-      port: 8080,
-    } : {}),
-    compress: true,
   },
 }));
