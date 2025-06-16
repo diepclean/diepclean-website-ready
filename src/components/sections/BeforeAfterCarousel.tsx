@@ -119,7 +119,7 @@ export const BeforeAfterCarousel = ({ slides }: BeforeAfterCarouselProps) => {
             className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl min-h-[48px] touch-manipulation"
           >
             <Calculator className="w-6 h-6 mr-3" />
-            Ook zo'n resultaat? Vraag offerte aan!
+            Vraag Offerte Aan
           </Button>
         </OfferteDialog>
       </div>
