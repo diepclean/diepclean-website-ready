@@ -1,0 +1,8 @@
+
+{
+  "scripts": {
+    "deploy:build": "npm run build && echo '✅ Build complete! Upload dist/ folder to Strato'",
+    "deploy:manual": "npm run build && node -e \"console.log('\\n📋 Upload de inhoud van dist/ folder naar je Strato htdocs folder\\n')\"",
+    "deploy:prep": "npm run build && echo '📦 Deployment package ready in dist/ folder'"
+  }
+}
