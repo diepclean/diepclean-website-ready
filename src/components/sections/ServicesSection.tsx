@@ -241,10 +241,11 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-4 py-3 text-base shadow-xl rounded-xl w-full max-w-sm mx-auto md:px-8 md:py-4 md:text-lg md:max-w-md"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-3 py-2 text-sm shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-8 md:py-4 md:text-lg md:max-w-md"
               >
-                <Calculator className="w-5 h-5 mr-2 md:w-6 md:h-6 md:mr-3" />
-                Ook zo'n resultaat? Vraag offerte aan!
+                <Calculator className="w-4 h-4 mr-2 md:w-6 md:h-6 md:mr-3" />
+                <span className="hidden sm:inline">Ook zo'n resultaat? Vraag offerte aan!</span>
+                <span className="sm:hidden">Offerte aanvragen</span>
               </Button>
             </OfferteDialog>
           </div>
@@ -278,10 +279,11 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-4 py-3 text-base shadow-xl rounded-xl w-full max-w-sm mx-auto md:px-10 md:py-5 md:text-xl md:max-w-lg"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-3 py-2 text-sm shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-10 md:py-5 md:text-xl md:max-w-lg"
               >
-                <Calculator className="w-5 h-5 mr-2 md:w-6 md:h-6 md:mr-3" />
-                Vraag nu een vrijblijvende offerte aan
+                <Calculator className="w-4 h-4 mr-2 md:w-6 md:h-6 md:mr-3" />
+                <span className="hidden sm:inline">Vraag nu een vrijblijvende offerte aan</span>
+                <span className="sm:hidden">Gratis offerte</span>
               </Button>
             </OfferteDialog>
           </div>
