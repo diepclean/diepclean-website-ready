@@ -241,9 +241,9 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-12 md:py-6 md:text-xl md:max-w-none"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-4 py-3 text-base shadow-xl rounded-xl w-full max-w-sm mx-auto md:px-8 md:py-4 md:text-lg md:max-w-md"
               >
-                <Calculator className="w-6 h-6 mr-3" />
+                <Calculator className="w-5 h-5 mr-2 md:w-6 md:h-6 md:mr-3" />
                 Ook zo'n resultaat? Vraag offerte aan!
               </Button>
             </OfferteDialog>
@@ -278,9 +278,9 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-12 py-6 text-xl shadow-xl rounded-xl"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-4 py-3 text-base shadow-xl rounded-xl w-full max-w-sm mx-auto md:px-10 md:py-5 md:text-xl md:max-w-lg"
               >
-                <Calculator className="w-6 h-6 mr-3" />
+                <Calculator className="w-5 h-5 mr-2 md:w-6 md:h-6 md:mr-3" />
                 Vraag nu een vrijblijvende offerte aan
               </Button>
             </OfferteDialog>
