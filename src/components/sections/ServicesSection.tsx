@@ -1,3 +1,4 @@
+
 import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,6 +125,9 @@ export const ServicesSection = () => {
                 <img 
                   src={service.image} 
                   alt={`${service.title} service door DiepClean.nl`}
+                  width="400"
+                  height="224"
+                  loading={index < 3 ? "eager" : "lazy"}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -183,6 +187,9 @@ export const ServicesSection = () => {
                             <img 
                               src={slide.before}
                               alt="Voor reiniging"
+                              width="400"
+                              height="256"
+                              loading="lazy"
                               className="w-full h-64 object-cover"
                             />
                             <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -195,6 +202,9 @@ export const ServicesSection = () => {
                             <img 
                               src={slide.after}
                               alt="Na reiniging"
+                              width="400"
+                              height="256"
+                              loading="lazy"
                               className="w-full h-64 object-cover"
                             />
                             <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
@@ -213,12 +223,14 @@ export const ServicesSection = () => {
             <button
               onClick={prevSlide}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+              aria-label="Vorige afbeelding"
             >
               <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
             <button
               onClick={nextSlide}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+              aria-label="Volgende afbeelding"
             >
               <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>
@@ -232,6 +244,7 @@ export const ServicesSection = () => {
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
+                  aria-label={`Ga naar slide ${index + 1}`}
                 />
               ))}
             </div>
@@ -263,6 +276,9 @@ export const ServicesSection = () => {
                 <img 
                   src={city.image}
                   alt={`DiepClean in ${city.name}`}
+                  width="300"
+                  height="256"
+                  loading="lazy"
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">

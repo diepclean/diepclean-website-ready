@@ -5,6 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    
     <!-- Primary Meta Tags -->
     <title>DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging Randstad</title>
     <meta name="title" content="DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging Randstad" />
@@ -38,56 +45,49 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://diepclean.nl/" />
     
-    <!-- Favicons -->
+    <!-- Favicons with cache headers -->
     <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png">
     <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png">
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Inline critical CSS for first paint -->
+    <style>
+      body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .hero-loading { background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); min-height: 50vh; }
+    </style>
 
-    <!-- Google Ads Global Site Tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+    <!-- Optimized Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-XXXXXXX');
+    </script>
+
+    <!-- Optimized Google Ads -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      
-      // Google Ads Configuration
       gtag('config', 'AW-CONVERSION_ID', {
-        'phone_conversion_number': '+31612345678'
-      });
-      
-      // Enhanced Conversions
-      gtag('config', 'AW-CONVERSION_ID', {
+        'phone_conversion_number': '+31612345678',
         'allow_enhanced_conversions': true
       });
-    </script>
-
-    <!-- Google Ads Conversion Functions -->
-    <script>
-      // Quote Request Conversion
+      
+      // Optimized conversion functions
       function gtag_report_quote_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
         gtag('event', 'conversion', {
           'send_to': 'AW-CONVERSION_ID/QUOTE_CONVERSION_LABEL',
           'value': 1.0,
           'currency': 'EUR',
-          'event_callback': callback
+          'event_callback': url ? function() { window.location = url; } : undefined
         });
         return false;
       }
 
-      // Phone Call Conversion
-      function gtag_report_phone_conversion(url) {
+      function gtag_report_phone_conversion() {
         gtag('event', 'conversion', {
           'send_to': 'AW-CONVERSION_ID/PHONE_CONVERSION_LABEL',
           'value': 1.0,
@@ -96,24 +96,18 @@
         return false;
       }
 
-      // WhatsApp Contact Conversion
       function gtag_report_whatsapp_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
         gtag('event', 'conversion', {
           'send_to': 'AW-CONVERSION_ID/WHATSAPP_CONVERSION_LABEL',
           'value': 1.0,
           'currency': 'EUR',
-          'event_callback': callback
+          'event_callback': url ? function() { window.location = url; } : undefined
         });
         return false;
       }
     </script>
     
-    <!-- Structured Data for Google Ads -->
+    <!-- Optimized Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -157,35 +151,11 @@
             }
           },
           {
-            "@type": "Offer",
+            "@type": "Offer", 
             "itemOffered": {
               "@type": "Service",
               "name": "Tapijtreiniging",
               "description": "Grondige reiniging van tapijten en vloerkleden"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Trapreiniging",
-              "description": "Specialistische reiniging van trapbekleding"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Auto Interieur Reiniging",
-              "description": "Complete reiniging van auto-interieur en bekleding"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Matrasreiniging",
-              "description": "Hygiënische reiniging van matrassen"
             }
           }
         ]
@@ -194,20 +164,7 @@
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "500"
-      },
-      "potentialAction": [
-        {
-          "@type": "ReserveAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://diepclean.nl/#contact"
-          },
-          "result": {
-            "@type": "Reservation",
-            "name": "Offerte Aanvraag"
-          }
-        }
-      ]
+      }
     }
     </script>
   </head>
@@ -216,9 +173,11 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading placeholder -->
+      <div class="hero-loading"></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
