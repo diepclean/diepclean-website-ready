@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to Strato via SFTP
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: 'su262094.w2.strato-hosting.eu'
+        server: '5017916096.ssh.w2.strato.hosting'
         username: 'su262094'
         password: 'Test123456.'
         port: 22
