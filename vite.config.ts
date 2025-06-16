@@ -23,7 +23,6 @@ export default defineConfig(({ mode }) => ({
           drop_console: true,
           drop_debugger: true,
           pure_funcs: ['console.log'],
-          remove_unused: true,
         },
         mangle: {
           safari10: true,
