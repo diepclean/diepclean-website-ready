@@ -28,17 +28,12 @@ jobs:
       run: npm run build
       
     - name: Deploy to Strato via SFTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: easingthemes/ssh-deploy@main
       with:
-        server: '5017916096.ssh.w2.strato.hosting'
-        username: 'su262094'
-        password: 'Test123456.'
-        port: 22
-        protocol: sftp
-        local-dir: './dist/'
-        server-dir: './'
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/.DS_Store
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ARGS: "-rlgoDzvc -i --delete"
+        SOURCE: "dist/"
+        REMOTE_HOST: "5017916096.ssh.w2.strato.hosting"
+        REMOTE_USER: "su262094"
+        TARGET: "./"
+        EXCLUDE: "/dist/, /node_modules/"
