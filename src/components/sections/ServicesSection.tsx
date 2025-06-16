@@ -1,3 +1,4 @@
+
 import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -237,7 +238,7 @@ export const ServicesSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] touch-manipulation ${
+                  className={`w-8 h-8 rounded-full transition-all duration-300 touch-manipulation ${
                     currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
                   aria-label={`Ga naar slide ${index + 1}`}
