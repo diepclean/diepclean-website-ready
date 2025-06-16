@@ -5,8 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Preload critical resources -->
+    <!-- Preload critical resources for LCP optimization -->
     <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" />
+    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" />
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -45,76 +46,109 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://diepclean.nl/" />
     
-    <!-- Favicons with cache headers -->
+    <!-- Favicons -->
     <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png">
     <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png">
 
-    <!-- Inline critical CSS for first paint -->
+    <!-- Critical CSS inlined for first paint -->
     <style>
-      body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-      .hero-loading { background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); min-height: 50vh; }
+      body { 
+        margin: 0; 
+        padding: 0; 
+        font-family: system-ui, -apple-system, sans-serif;
+        font-display: swap;
+      }
+      .hero-loading { 
+        background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); 
+        min-height: 50vh; 
+      }
+      /* Prevent layout shift for images */
+      img { 
+        height: auto; 
+        max-width: 100%; 
+      }
     </style>
+  </head>
 
-    <!-- Optimized Google Tag Manager -->
+  <body>
+    <div id="root">
+      <!-- Loading placeholder to prevent layout shift -->
+      <div class="hero-loading"></div>
+    </div>
+    
+    <!-- Load main script with defer for better performance -->
+    <script type="module" src="/src/main.tsx" defer></script>
+    
+    <!-- Load third-party scripts asynchronously after main content -->
     <script>
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-XXXXXXX');
-    </script>
-
-    <!-- Optimized Google Ads -->
-    <script async defer src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-CONVERSION_ID', {
-        'phone_conversion_number': '+31612345678',
-        'allow_enhanced_conversions': true
+      // Load Google Tag Manager after page load
+      window.addEventListener('load', function() {
+        (function(w,d,s,l,i){
+          w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+          j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-XXXXXXX');
       });
-      
-      // Optimized conversion functions
-      function gtag_report_quote_conversion(url) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/QUOTE_CONVERSION_LABEL',
-          'value': 1.0,
-          'currency': 'EUR',
-          'event_callback': url ? function() { window.location = url; } : undefined
-        });
-        return false;
-      }
 
-      function gtag_report_phone_conversion() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/PHONE_CONVERSION_LABEL',
-          'value': 1.0,
-          'currency': 'EUR'
-        });
-        return false;
-      }
+      // Load Google Ads after page load
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.defer = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-CONVERSION_ID', {
+            'phone_conversion_number': '+31612345678',
+            'allow_enhanced_conversions': true
+          });
+          
+          // Conversion functions
+          window.gtag_report_quote_conversion = function(url) {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-CONVERSION_ID/QUOTE_CONVERSION_LABEL',
+              'value': 1.0,
+              'currency': 'EUR',
+              'event_callback': url ? function() { window.location = url; } : undefined
+            });
+            return false;
+          };
 
-      function gtag_report_whatsapp_conversion(url) {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-CONVERSION_ID/WHATSAPP_CONVERSION_LABEL',
-          'value': 1.0,
-          'currency': 'EUR',
-          'event_callback': url ? function() { window.location = url; } : undefined
-        });
-        return false;
-      }
+          window.gtag_report_phone_conversion = function() {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-CONVERSION_ID/PHONE_CONVERSION_LABEL',
+              'value': 1.0,
+              'currency': 'EUR'
+            });
+            return false;
+          };
+
+          window.gtag_report_whatsapp_conversion = function(url) {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-CONVERSION_ID/WHATSAPP_CONVERSION_LABEL',
+              'value': 1.0,
+              'currency': 'EUR',
+              'event_callback': url ? function() { window.location = url; } : undefined
+            });
+            return false;
+          };
+        };
+      });
     </script>
     
-    <!-- Optimized Structured Data -->
+    <!-- Optimized Structured Data - load after page content -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "DiepClean.nl",
       "image": "/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png",
-      "description": "Professionele meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging in de Randstad. Eco-vriendelijk en betrouwbaar.",
+      "description": "Professionele meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging in de Randstad.",
       "url": "https://diepclean.nl",
       "telephone": "+31612345678",
       "priceRange": "€€",
@@ -123,43 +157,6 @@
         "addressRegion": "Randstad",
         "addressCountry": "NL"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "52.3676",
-        "longitude": "4.9041"
-      },
-      "openingHours": "Mo-Su 07:00-22:00",
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "52.3676",
-          "longitude": "4.9041"
-        },
-        "geoRadius": "50000"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Reinigingsdiensten",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Meubelreiniging",
-              "description": "Professionele reiniging van banken, stoelen en andere stoffering"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tapijtreiniging",
-              "description": "Grondige reiniging van tapijten en vloerkleden"
-            }
-          }
-        ]
-      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
@@ -167,17 +164,9 @@
       }
     }
     </script>
-  </head>
-
-  <body>
+    
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <div id="root">
-      <!-- Loading placeholder -->
-      <div class="hero-loading"></div>
-    </div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
