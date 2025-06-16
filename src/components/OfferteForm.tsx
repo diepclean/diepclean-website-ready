@@ -49,10 +49,9 @@ const OfferteForm = () => {
   };
 
   const sendAutomaticEmail = async (formData: any) => {
-    const serviceId = 'YOUR_SERVICE_ID';
-    const templateId = 'YOUR_TEMPLATE_ID';
-    const publicKey = 'YOUR_PUBLIC_KEY';
-
+    // Initialize EmailJS met your public key
+    emailjs.init("YOUR_PUBLIC_KEY"); // Vervang met jouw EmailJS public key
+    
     const templateParams = {
       from_name: formData.naam,
       from_email: formData.email,
@@ -60,11 +59,19 @@ const OfferteForm = () => {
       postcode: formData.postcode,
       service: formData.service,
       timestamp: new Date().toLocaleString('nl-NL'),
-      to_email: 'info@diepclean.nl'
+      to_email: 'info@diepclean.nl',
+      reply_to: formData.email
     };
 
     try {
-      console.log('Email zou verzonden worden met:', templateParams);
+      // Verstuur email via EmailJS
+      const response = await emailjs.send(
+        'YOUR_SERVICE_ID', // Vervang met jouw EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Vervang met jouw EmailJS template ID
+        templateParams
+      );
+      
+      console.log('Email succesvol verzonden:', response);
       return true;
     } catch (error) {
       console.error('Email verzending mislukt:', error);
@@ -87,7 +94,7 @@ const OfferteForm = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Er is iets misgegaan. Probeer het opnieuw.",
+        description: "Er is iets misgegaan. Probeer het opnieuw of bel ons direct.",
         variant: "destructive"
       });
     } finally {
