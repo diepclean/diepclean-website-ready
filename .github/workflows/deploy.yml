@@ -30,10 +30,10 @@ jobs:
     - name: Deploy to Strato via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: 5017916096.ssh.w2.strato.hosting
+        server: su262094.w2.strato-hosting.eu
         username: su262094
         password: Test123456
-        protocol: ftps
+        protocol: ftp
         port: 21
         local-dir: ./dist/
         server-dir: /
