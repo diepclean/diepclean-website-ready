@@ -1,4 +1,3 @@
-
 import { Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -61,7 +60,7 @@ export const ServicesSection = () => {
                 className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-10 py-5 text-xl shadow-xl rounded-xl min-h-[48px] touch-manipulation"
               >
                 <Calculator className="w-6 h-6 mr-3" />
-                Vraag nu een vrijblijvende offerte aan
+                Vraag Offerte Aan
               </Button>
             </OfferteDialog>
           </div>
