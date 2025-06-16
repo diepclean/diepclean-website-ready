@@ -27,20 +27,13 @@ jobs:
     - name: Build project
       run: npm run build
       
-    - name: Deploy via SFTP to Strato
-      uses: sebastianpopp/ssh-sftp-deploy@v4.2.1
+    - name: Deploy to Strato via SFTP
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
-        server: 5017916096.w2.strato-hosting
-        username: su262094
-        password: Test123456.
-        protocol: SFTP
+        server: 'su262094.w2.strato-hosting.eu'
+        username: 'su262094'
+        password: 'Test123456.'
         port: 22
-        local-dir: ./dist/
-        server-dir: /
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          .github/
-          README.md
-          package*.json
+        local_path: './dist/*'
+        remote_path: '/'
+        sftpArgs: '-o ConnectTimeout=5'
