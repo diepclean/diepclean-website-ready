@@ -49,8 +49,8 @@ const OfferteForm = () => {
   };
 
   const sendAutomaticEmail = async (formData: any) => {
-    // Initialize EmailJS met your public key
-    emailjs.init("YOUR_PUBLIC_KEY"); // Vervang met jouw EmailJS public key
+    // Initialize EmailJS met de juiste public key
+    emailjs.init("_443hlESYYVo7UedX");
     
     const templateParams = {
       from_name: formData.naam,
@@ -66,8 +66,8 @@ const OfferteForm = () => {
     try {
       // Verstuur email via EmailJS
       const response = await emailjs.send(
-        'YOUR_SERVICE_ID', // Vervang met jouw EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Vervang met jouw EmailJS template ID
+        'diepclean', // Service ID
+        'template_m8n61ic', // Template ID
         templateParams
       );
       
