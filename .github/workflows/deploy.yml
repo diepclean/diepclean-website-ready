@@ -27,14 +27,16 @@ jobs:
     - name: Build project
       run: npm run build
       
-    - name: Deploy to Strato via FTP
+    - name: Deploy to Strato via SFTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.STRATO_FTP_SERVER }}
-        username: ${{ secrets.STRATO_FTP_USERNAME }}
-        password: ${{ secrets.STRATO_FTP_PASSWORD }}
+        server: 5017916096.ssh.w2.strato.hosting
+        username: su262094
+        password: Test123456
+        protocol: sftp
+        port: 22
         local-dir: ./dist/
-        server-dir: /htdocs/
+        server-dir: /
         exclude: |
           **/.git*
           **/.git*/**
