@@ -53,7 +53,7 @@ export const ServicesSection = () => {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="flex justify-center items-center w-full">
             <OfferteDialog>
               <Button 
                 size="lg" 
