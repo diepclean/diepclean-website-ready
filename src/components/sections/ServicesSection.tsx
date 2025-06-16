@@ -171,7 +171,6 @@ export const ServicesSection = () => {
           </div>
 
           <div className="relative max-w-4xl mx-auto">
-            {/* Carousel Container */}
             <div className="overflow-hidden rounded-2xl">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
@@ -219,7 +218,6 @@ export const ServicesSection = () => {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
             <button
               onClick={prevSlide}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
@@ -235,7 +233,6 @@ export const ServicesSection = () => {
               <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>
 
-            {/* Dots Indicator */}
             <div className="flex justify-center space-x-2 mt-8">
               {beforeAfterSlides.map((_, index) => (
                 <button
@@ -254,11 +251,10 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-3 py-2 text-sm shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-8 md:py-4 md:text-lg md:max-w-md"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl"
               >
-                <Calculator className="w-4 h-4 mr-2 md:w-6 md:h-6 md:mr-3" />
-                <span className="hidden sm:inline">Ook zo'n resultaat? Vraag offerte aan!</span>
-                <span className="sm:hidden">Offerte aanvragen</span>
+                <Calculator className="w-6 h-6 mr-3" />
+                Ook zo'n resultaat? Vraag offerte aan!
               </Button>
             </OfferteDialog>
           </div>
@@ -295,11 +291,10 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-3 py-2 text-sm shadow-xl rounded-xl w-full max-w-xs mx-auto md:px-10 md:py-5 md:text-xl md:max-w-lg"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-10 py-5 text-xl shadow-xl rounded-xl"
               >
-                <Calculator className="w-4 h-4 mr-2 md:w-6 md:h-6 md:mr-3" />
-                <span className="hidden sm:inline">Vraag nu een vrijblijvende offerte aan</span>
-                <span className="sm:hidden">Gratis offerte</span>
+                <Calculator className="w-6 h-6 mr-3" />
+                Vraag nu een vrijblijvende offerte aan
               </Button>
             </OfferteDialog>
           </div>

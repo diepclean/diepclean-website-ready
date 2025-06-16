@@ -6,10 +6,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
@@ -20,17 +16,20 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable compression and minification only in production
     minify: mode === 'production' ? 'terser' : false,
     ...(mode === 'production' && {
       terserOptions: {
         compress: {
           drop_console: true,
           drop_debugger: true,
+          pure_funcs: ['console.log'],
+          remove_unused: true,
+        },
+        mangle: {
+          safari10: true,
         },
       },
     }),
-    // Split chunks for better caching
     rollupOptions: {
       output: {
         manualChunks: {
@@ -39,9 +38,27 @@ export default defineConfig(({ mode }) => ({
           icons: ['lucide-react'],
           router: ['react-router-dom'],
         },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
-    // Reduce chunk size warnings
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 500,
+    reportCompressedSize: false,
+    sourcemap: false,
+  },
+  server: {
+    host: "::",
+    port: 8080,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
   },
 }));

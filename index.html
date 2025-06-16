@@ -62,7 +62,6 @@
         background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); 
         min-height: 50vh; 
       }
-      /* Prevent layout shift for images */
       img { 
         height: auto; 
         max-width: 100%; 
@@ -72,76 +71,12 @@
 
   <body>
     <div id="root">
-      <!-- Loading placeholder to prevent layout shift -->
       <div class="hero-loading"></div>
     </div>
     
-    <!-- Load main script with defer for better performance -->
-    <script type="module" src="/src/main.tsx" defer></script>
+    <script type="module" src="/src/main.tsx"></script>
     
-    <!-- Load third-party scripts asynchronously after main content -->
-    <script>
-      // Load Google Tag Manager after page load
-      window.addEventListener('load', function() {
-        (function(w,d,s,l,i){
-          w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-          var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-XXXXXXX');
-      });
-
-      // Load Google Ads after page load
-      window.addEventListener('load', function() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.defer = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID';
-        document.head.appendChild(script);
-        
-        script.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-CONVERSION_ID', {
-            'phone_conversion_number': '+31612345678',
-            'allow_enhanced_conversions': true
-          });
-          
-          // Conversion functions
-          window.gtag_report_quote_conversion = function(url) {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-CONVERSION_ID/QUOTE_CONVERSION_LABEL',
-              'value': 1.0,
-              'currency': 'EUR',
-              'event_callback': url ? function() { window.location = url; } : undefined
-            });
-            return false;
-          };
-
-          window.gtag_report_phone_conversion = function() {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-CONVERSION_ID/PHONE_CONVERSION_LABEL',
-              'value': 1.0,
-              'currency': 'EUR'
-            });
-            return false;
-          };
-
-          window.gtag_report_whatsapp_conversion = function(url) {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-CONVERSION_ID/WHATSAPP_CONVERSION_LABEL',
-              'value': 1.0,
-              'currency': 'EUR',
-              'event_callback': url ? function() { window.location = url; } : undefined
-            });
-            return false;
-          };
-        };
-      });
-    </script>
-    
-    <!-- Optimized Structured Data - load after page content -->
+    <!-- Optimized Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -164,9 +99,5 @@
       }
     }
     </script>
-    
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </body>
 </html>
