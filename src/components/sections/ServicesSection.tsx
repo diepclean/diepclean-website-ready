@@ -1,4 +1,3 @@
-
 import { Droplets, Car, Bed, PawPrint, Sofa, Home, Calculator, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -151,7 +150,7 @@ export const ServicesSection = () => {
                 </div>
 
                 <OfferteDialog>
-                  <Button className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white w-full py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 text-lg">
+                  <Button className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white w-full py-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300 text-lg min-h-[48px] touch-manipulation">
                     Offerte Aanvragen
                   </Button>
                 </OfferteDialog>
@@ -220,14 +219,14 @@ export const ServicesSection = () => {
 
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10 min-h-[48px] min-w-[48px] touch-manipulation"
               aria-label="Vorige afbeelding"
             >
               <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 z-10 min-h-[48px] min-w-[48px] touch-manipulation"
               aria-label="Volgende afbeelding"
             >
               <ChevronRight className="w-6 h-6 text-gray-600" />
@@ -238,7 +237,7 @@ export const ServicesSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 rounded-full transition-all duration-300 min-h-[44px] min-w-[44px] touch-manipulation ${
                     currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
                   aria-label={`Ga naar slide ${index + 1}`}
@@ -251,7 +250,7 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-8 py-4 text-lg shadow-xl rounded-xl min-h-[48px] touch-manipulation"
               >
                 <Calculator className="w-6 h-6 mr-3" />
                 Ook zo'n resultaat? Vraag offerte aan!
@@ -291,7 +290,7 @@ export const ServicesSection = () => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-10 py-5 text-xl shadow-xl rounded-xl"
+                className="bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white px-10 py-5 text-xl shadow-xl rounded-xl min-h-[48px] touch-manipulation"
               >
                 <Calculator className="w-6 h-6 mr-3" />
                 Vraag nu een vrijblijvende offerte aan
