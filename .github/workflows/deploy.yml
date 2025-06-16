@@ -27,8 +27,8 @@ jobs:
     - name: Build project
       run: npm run build
       
-    - name: Deploy to Strato via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Deploy via SFTP to Strato
+      uses: sebastianpopp/ssh-sftp-deploy@v4.2.1
       with:
         server: 5017916096.w2.strato-hosting
         username: su262094
