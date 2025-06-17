@@ -1,4 +1,3 @@
-
 import { Droplets, Star, Phone, MessageCircle, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -50,7 +49,7 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
             </div>
             
             {/* Floating Badge */}
-            <div className="absolute -top-4 right-6 bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl hover:scale-110 transition-transform duration-300">
+            <div className="absolute -top-4 right-2 transform translate-x-1/4 bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl hover:scale-110 transition-transform duration-300">
               5+ Jaar Ervaring
             </div>
           </div>
