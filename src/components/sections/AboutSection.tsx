@@ -34,7 +34,7 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
               </div>
               <div className="space-y-6 pt-8 relative">
                 {/* Floating Badge boven de eerste afbeelding van de rechter kolom */}
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-green-500 text-white px-8 py-4 rounded-full text-lg font-bold shadow-2xl hover:scale-110 transition-transform duration-300 z-10">
+                <div className="absolute -top-12 left-0 right-0 mx-auto bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-2xl hover:scale-110 transition-transform duration-300 z-10 w-full max-w-[180px]">
                   5+ Jaar Ervaring
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
