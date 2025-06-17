@@ -1,3 +1,4 @@
+
 import { Droplets, Star, Phone, MessageCircle, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -30,7 +31,11 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
                   />
                 </div>
               </div>
-              <div className="space-y-6 pt-8">
+              <div className="space-y-6 pt-8 relative">
+                {/* Floating Badge boven de eerste afbeelding van de rechter kolom */}
+                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl hover:scale-110 transition-transform duration-300 z-10">
+                  5+ Jaar Ervaring
+                </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                   <img 
                     src="/lovable-uploads/e8db6f1b-b6a4-4185-89f9-bc42c1ceb2f1.png"
@@ -46,11 +51,6 @@ export const AboutSection = ({ onWhatsApp, onCall }: AboutSectionProps) => {
                   />
                 </div>
               </div>
-            </div>
-            
-            {/* Floating Badge */}
-            <div className="absolute -top-4 right-2 transform translate-x-1/4 bg-gradient-to-r from-blue-600 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-2xl hover:scale-110 transition-transform duration-300">
-              5+ Jaar Ervaring
             </div>
           </div>
 
