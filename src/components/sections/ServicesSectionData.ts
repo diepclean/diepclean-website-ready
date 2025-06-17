@@ -49,23 +49,23 @@ export const services = [
 export const beforeAfterSlides = [
   {
     title: "Hoekbank Reiniging",
-    before: "/lovable-uploads/66cd836e-690f-479a-bee9-d025cb74823c.png",
-    after: "/lovable-uploads/82a1bf7a-87be-4f91-b794-69dbfc5d440c.png"
+    before: "/lovable-uploads/82a1bf7a-87be-4f91-b794-69dbfc5d440c.png",
+    after: "/lovable-uploads/66cd836e-690f-479a-bee9-d025cb74823c.png"
   },
   {
     title: "Moderne Bank Reiniging", 
-    before: "/lovable-uploads/24ee282d-dbee-405e-b117-dcaaa28a6ea3.png",
-    after: "/lovable-uploads/442b9a57-a2cc-4d29-a416-91c39d5a546e.png"
+    before: "/lovable-uploads/442b9a57-a2cc-4d29-a416-91c39d5a546e.png",
+    after: "/lovable-uploads/24ee282d-dbee-405e-b117-dcaaa28a6ea3.png"
   },
   {
     title: "Bank Met Chaise Longue", 
-    before: "/lovable-uploads/c7ea61b3-c460-4fb7-8ce9-e48400bad7e0.png",
-    after: "/lovable-uploads/9a33605c-206a-4774-8dbf-ebb44554b144.png"
+    before: "/lovable-uploads/9a33605c-206a-4774-8dbf-ebb44554b144.png",
+    after: "/lovable-uploads/c7ea61b3-c460-4fb7-8ce9-e48400bad7e0.png"
   },
   {
     title: "L-Vormige Bank Reiniging", 
-    before: "/lovable-uploads/798740fc-b765-42c5-a763-86714aec273d.png",
-    after: "/lovable-uploads/32255eac-2a64-423d-ba0d-67c6f1cdb734.png"
+    before: "/lovable-uploads/32255eac-2a64-423d-ba0d-67c6f1cdb734.png",
+    after: "/lovable-uploads/798740fc-b765-42c5-a763-86714aec273d.png"
   }
 ];
 
