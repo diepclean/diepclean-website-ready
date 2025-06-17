@@ -40,7 +40,7 @@ export const Header = () => {
               className="h-12 w-auto"
             />
             <div>
-              <h1 className="text-2xl font-bold text-blue-600">DiepClean.nl</h1>
+              <h1 className="text-2xl font-bold text-blue-600">DiepClean</h1>
               <p className="text-sm" style={{ color: '#16a34a' }}>Betaalbaar & Ecologisch</p>
             </div>
           </div>
