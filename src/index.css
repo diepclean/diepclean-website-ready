@@ -36,25 +36,15 @@
   body {
     @apply bg-background text-foreground;
     font-display: swap;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  /* Critical performance optimizations */
+  /* Optimize image loading */
   img {
     height: auto;
     max-width: 100%;
-    loading: lazy;
-    decoding: async;
   }
 
-  /* Optimize for Core Web Vitals */
-  .hero-section img,
-  .above-fold img {
-    loading: eager;
-    decoding: sync;
-  }
-
-  /* Touch targets for mobile optimization */
+  /* Accessibility improvements */
   button, 
   [role="button"],
   input[type="submit"],
@@ -64,7 +54,7 @@
     touch-action: manipulation;
   }
 
-  /* Optimized focus states */
+  /* Focus states for better keyboard navigation */
   button:focus-visible,
   [role="button"]:focus-visible,
   input:focus-visible,
@@ -75,32 +65,31 @@
     outline-offset: 2px;
   }
 
-  /* Improved contrast for accessibility */
+  /* Improved contrast for text */
   .text-gray-600 {
-    color: rgb(75 85 99) !important;
+    color: rgb(75 85 99) !important; /* Better contrast ratio */
   }
 
   .text-gray-700 {
-    color: rgb(55 65 81) !important;
+    color: rgb(55 65 81) !important; /* Better contrast ratio */
   }
 
   .text-gray-800 {
-    color: rgb(31 41 55) !important;
+    color: rgb(31 41 55) !important; /* Better contrast ratio */
   }
 }
 
-/* Critical above-the-fold styles */
+/* Critical above-the-fold styles only */
 @layer utilities {
   .hero-gradient {
     background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%);
   }
   
   .card-hover {
-    @apply hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
-    will-change: transform, box-shadow;
+    @apply hover:shadow-2xl transition-all duration-500 hover:-translate-y-2;
   }
 
-  /* Performance optimizations */
+  /* Optimize for performance */
   .will-change-transform {
     will-change: transform;
   }
@@ -109,27 +98,12 @@
     will-change: auto;
   }
 
-  .contain-layout {
-    contain: layout;
-  }
-
-  .contain-paint {
-    contain: paint;
-  }
-
-  /* Touch optimizations */
+  /* Touch targets */
   .touch-manipulation {
     touch-action: manipulation;
   }
 
-  /* Reduce layout thrashing */
-  .gpu-accelerated {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-
-  /* Skip link for accessibility */
+  /* Skip link for screen readers */
   .skip-link {
     position: absolute;
     top: -40px;
@@ -143,23 +117,5 @@
 
   .skip-link:focus {
     top: 6px;
-  }
-}
-
-/* Optimize animation performance */
-@media (prefers-reduced-motion: no-preference) {
-  .animate-in {
-    animation-duration: 0.3s;
-    animation-fill-mode: both;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
   }
 }
