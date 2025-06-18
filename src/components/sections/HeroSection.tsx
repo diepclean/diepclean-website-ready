@@ -11,22 +11,22 @@ interface HeroSectionProps {
 export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
   return (
     <section 
-      className="relative py-20 bg-cover bg-center bg-no-repeat"
+      className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[80vh] flex items-center"
       style={{
-        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.webp')`
+        backgroundImage: `url('/lovable-uploads/4aca9de7-bdbc-4328-8512-290dc9f43663.png')`
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >
-      {/* Optimized overlay for better performance */}
-      <div className="absolute inset-0 bg-white/50" aria-hidden="true"></div>
+      {/* Optimized overlay for better readability and performance */}
+      <div className="absolute inset-0 bg-black/40" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Optimized heading for LCP with proper heading hierarchy */}
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-700">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-300">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
           </h1>
-          <p className="text-lg md:text-2xl text-gray-800 mb-8 leading-relaxed font-medium">
+          <p className="text-lg md:text-2xl text-white mb-8 leading-relaxed font-medium drop-shadow-md">
             DiepClean.nl is uw specialist in meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging. 
             Wij maken alles weer als nieuw met onze eco-vriendelijke methoden.
           </p>
@@ -76,21 +76,36 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto" role="region" aria-label="Bedrijfsstatistieken">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="300 plus tevreden klanten">300+</div>
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
+              <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="500 plus tevreden klanten">500+</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Tevreden Klanten</div>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="24 uur per dag, 7 dagen per week service">24/7</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Service Beschikbaar</div>
             </div>
-            <div className="text-center">
+            <div className="text-center bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="5 plus jaar ervaring">5+</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Jaar Ervaring</div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Responsive background image optimization */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section {
+            background-size: cover;
+            background-position: center;
+          }
+        }
+        @media (min-width: 769px) {
+          section {
+            background-attachment: fixed;
+          }
+        }
+      `}</style>
     </section>
   );
 };
