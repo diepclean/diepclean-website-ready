@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export const usePerformance = () => {
   useEffect(() => {
-    // Optimize images with Intersection Observer
+    // Basic image lazy loading optimization
     const imageObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,34 +24,8 @@ export const usePerformance = () => {
     const lazyImages = document.querySelectorAll('img[data-src]');
     lazyImages.forEach((img) => imageObserver.observe(img));
 
-    // Cleanup
     return () => {
       lazyImages.forEach((img) => imageObserver.unobserve(img));
     };
-  }, []);
-
-  useEffect(() => {
-    // Optimize third-party scripts
-    const optimizeThirdParty = () => {
-      // Defer non-critical scripts
-      const scripts = document.querySelectorAll('script[data-defer]');
-      scripts.forEach((script) => {
-        setTimeout(() => {
-          const newScript = document.createElement('script');
-          newScript.src = script.getAttribute('data-defer') || '';
-          newScript.async = true;
-          document.head.appendChild(newScript);
-        }, 3000);
-      });
-    };
-
-    // Run after page load
-    if (document.readyState === 'complete') {
-      optimizeThirdParty();
-    } else {
-      window.addEventListener('load', optimizeThirdParty);
-    }
-
-    return () => window.removeEventListener('load', optimizeThirdParty);
   }, []);
 };
