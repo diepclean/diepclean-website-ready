@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Header } from "@/components/sections/Header";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { GuaranteesSection } from "@/components/sections/GuaranteesSection";
@@ -12,7 +13,7 @@ import { FloatingWhatsApp } from "@/components/sections/FloatingWhatsApp";
 import { trackWhatsAppConversion, trackPhoneConversion } from "@/utils/googleAds";
 
 const Index = () => {
-  console.log("Index component is rendering");
+  console.log("Index component is rendering - start");
 
   const handleWhatsApp = () => {
     console.log("WhatsApp button clicked");
@@ -25,6 +26,8 @@ const Index = () => {
     trackPhoneConversion();
     window.open("tel:+31634273702");
   };
+
+  console.log("Index component - about to return JSX");
 
   return (
     <div className="min-h-screen bg-white">

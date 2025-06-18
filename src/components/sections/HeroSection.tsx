@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Phone, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -9,9 +10,11 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
+  console.log("HeroSection rendering");
+  
   return (
     <section 
-      className="relative py-20 bg-cover bg-center bg-no-repeat"
+      className="relative py-20 bg-cover bg-center bg-no-repeat min-h-screen"
       style={{
         backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
       }}
