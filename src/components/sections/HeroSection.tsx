@@ -1,3 +1,4 @@
+
 import { Phone, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
@@ -12,12 +13,12 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
     <section 
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url('/lovable-uploads/b7182bff-16ed-430c-9610-1cc4153a0c46.png')`
+        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >
-      {/* Optimized overlay for better performance and readability */}
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true"></div>
+      {/* Optimized overlay for better performance */}
+      <div className="absolute inset-0 bg-white/50" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
