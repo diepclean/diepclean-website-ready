@@ -13,7 +13,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
     <section 
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.webp')`
+        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >

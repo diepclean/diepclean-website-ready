@@ -38,15 +38,10 @@
     font-display: swap;
   }
 
-  /* Optimize image loading and WebP support */
+  /* Optimize image loading */
   img {
     height: auto;
     max-width: 100%;
-  }
-
-  /* WebP fallback support */
-  .no-webp img[data-webp] {
-    content: url(attr(data-fallback));
   }
 
   /* Accessibility improvements */
@@ -72,15 +67,15 @@
 
   /* Improved contrast for text */
   .text-gray-600 {
-    color: rgb(75 85 99) !important;
+    color: rgb(75 85 99) !important; /* Better contrast ratio */
   }
 
   .text-gray-700 {
-    color: rgb(55 65 81) !important;
+    color: rgb(55 65 81) !important; /* Better contrast ratio */
   }
 
   .text-gray-800 {
-    color: rgb(31 41 55) !important;
+    color: rgb(31 41 55) !important; /* Better contrast ratio */
   }
 }
 
@@ -122,20 +117,5 @@
 
   .skip-link:focus {
     top: 6px;
-  }
-
-  /* Performance optimizations */
-  .gpu-accelerated {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000;
-  }
-
-  .contain-layout {
-    contain: layout;
-  }
-
-  .contain-paint {
-    contain: paint;
   }
 }

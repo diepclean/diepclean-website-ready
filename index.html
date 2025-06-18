@@ -13,14 +13,13 @@
     })(window,document,'script','dataLayer','GTM-T7XXBHFR');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Preload critical WebP images with fallback -->
-    <link rel="preload" as="image" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp" type="image/webp" />
-    <link rel="preload" as="image" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.webp" type="image/webp" />
+    <!-- Preload critical resources for LCP optimization -->
+    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" />
+    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" />
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="//wa.me" />
     
     <!-- Primary Meta Tags -->
     <title>DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging Randstad</title>
@@ -41,7 +40,7 @@
     <meta property="og:url" content="https://diepclean.nl/" />
     <meta property="og:title" content="DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging" />
     <meta property="og:description" content="Specialist in meubelreiniging, tapijtreiniging, trapreiniging en auto-interieur reiniging. Eco-vriendelijk en professioneel. 500+ tevreden klanten!" />
-    <meta property="og:image" content="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp" />
+    <meta property="og:image" content="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:site_name" content="DiepClean.nl" />
 
@@ -50,14 +49,14 @@
     <meta property="twitter:url" content="https://diepclean.nl/" />
     <meta property="twitter:title" content="DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging" />
     <meta property="twitter:description" content="Specialist in meubelreiniging, tapijtreiniging, trapreiniging en auto-interieur reiniging. Eco-vriendelijk en professioneel." />
-    <meta property="twitter:image" content="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp" />
+    <meta property="twitter:image" content="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://diepclean.nl/" />
     
-    <!-- Favicons with WebP support -->
-    <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp" type="image/webp">
-    <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp">
+    <!-- Favicons -->
+    <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png">
+    <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png">
 
     <!-- Critical CSS inlined for first paint -->
     <style>
@@ -75,10 +74,6 @@
         height: auto; 
         max-width: 100%; 
       }
-      /* WebP support detection */
-      .webp img[data-webp] {
-        content: url(attr(data-webp));
-      }
     </style>
   </head>
 
@@ -94,29 +89,16 @@
     
     <script type="module" src="/src/main.tsx"></script>
     
-    <!-- WebP feature detection -->
-    <script>
-      (function() {
-        var webp = new Image();
-        webp.onload = webp.onerror = function() {
-          if (webp.height == 2) {
-            document.documentElement.classList.add('webp');
-          }
-        };
-        webp.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-      })();
-    </script>
-    
     <!-- Optimized Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "DiepClean.nl",
-      "image": "/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp",
+      "image": "/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png",
       "description": "Professionele meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging in de Randstad.",
       "url": "https://diepclean.nl",
-      "telephone": "+31634273702",
+      "telephone": "+31612345678",
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
@@ -127,15 +109,6 @@
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "500"
-      },
-      "serviceArea": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": "52.370216",
-          "longitude": "4.895168"
-        },
-        "geoRadius": "50000"
       }
     }
     </script>

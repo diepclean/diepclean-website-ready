@@ -10,17 +10,11 @@ export const Footer = () => {
           </div>
           
           <div className="flex items-center">
-            <picture>
-              <source srcSet="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.webp" type="image/webp" />
-              <img 
-                src="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" 
-                alt="DiepClean Logo" 
-                className="h-8 w-auto"
-                loading="lazy"
-                width="32"
-                height="32"
-              />
-            </picture>
+            <img 
+              src="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" 
+              alt="DiepClean Logo" 
+              className="h-8 w-auto"
+            />
           </div>
         </div>
       </div>
