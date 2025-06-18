@@ -13,13 +13,17 @@
     })(window,document,'script','dataLayer','GTM-T7XXBHFR');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Preload critical resources for LCP optimization -->
-    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" />
-    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" />
+    <!-- Critical resource preloads for LCP optimization -->
+    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" fetchpriority="high" />
+    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" fetchpriority="high" />
     
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//wa.me" />
+    
+    <!-- Preconnect to critical third parties -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     
     <!-- Primary Meta Tags -->
     <title>DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging Randstad</title>
@@ -54,25 +58,41 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://diepclean.nl/" />
     
-    <!-- Favicons -->
-    <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png">
-    <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png">
+    <!-- Favicons with explicit sizes -->
+    <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" sizes="180x180">
 
-    <!-- Critical CSS inlined for first paint -->
+    <!-- Critical CSS inlined for fastest first paint -->
     <style>
       body { 
         margin: 0; 
         padding: 0; 
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         font-display: swap;
+        line-height: 1.5;
       }
       .hero-loading { 
         background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); 
         min-height: 50vh; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       img { 
         height: auto; 
-        max-width: 100%; 
+        max-width: 100%;
+        loading: lazy;
+        decoding: async;
+      }
+      .above-fold img {
+        loading: eager;
+        decoding: sync;
+      }
+      /* Critical layout styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
       }
     </style>
   </head>
@@ -98,7 +118,7 @@
       "image": "/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png",
       "description": "Professionele meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging in de Randstad.",
       "url": "https://diepclean.nl",
-      "telephone": "+31612345678",
+      "telephone": "+31634273702",
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
@@ -108,7 +128,16 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "500"
+        "reviewCount": "300"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "52.370216",
+          "longitude": "4.895168"
+        },
+        "geoRadius": "50000"
       }
     }
     </script>
