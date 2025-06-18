@@ -13,12 +13,13 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
     <section 
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
+        backgroundImage: `url('/lovable-uploads/7f03124e-ed61-40a8-a014-f476b192a8c6.png')`,
+        filter: 'blur(0.5px)'
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >
-      {/* Optimized overlay for better performance */}
-      <div className="absolute inset-0 bg-white/50" aria-hidden="true"></div>
+      {/* Optimized overlay for better performance and readability */}
+      <div className="absolute inset-0 bg-white/60" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
