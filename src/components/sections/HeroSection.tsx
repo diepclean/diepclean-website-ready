@@ -2,6 +2,7 @@
 import { Phone, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OfferteDialog } from "@/components/OfferteForm";
+import { usePerformance } from "@/hooks/usePerformance";
 
 interface HeroSectionProps {
   onWhatsApp: () => void;
@@ -9,24 +10,26 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
+  usePerformance();
+  
   return (
     <section 
-      className="relative py-20 bg-cover bg-center bg-no-repeat"
+      className="relative py-20 bg-cover bg-center bg-no-repeat aspect-ratio-16-9"
       style={{
         backgroundImage: `url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png')`
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >
-      {/* Optimized overlay for better performance */}
-      <div className="absolute inset-0 bg-white/50" aria-hidden="true"></div>
+      {/* Optimized overlay with GPU acceleration */}
+      <div className="absolute inset-0 bg-white/50 will-change-transform" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Optimized heading for LCP with proper heading hierarchy */}
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          {/* Optimized heading with proper semantic structure */}
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 will-change-transform">
             <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-700">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
           </h1>
-          <p className="text-lg md:text-2xl text-gray-800 mb-8 leading-relaxed font-medium">
+          <p className="text-lg md:text-2xl text-gray-800 mb-8 leading-relaxed font-medium max-w-3xl mx-auto">
             DiepClean.nl is uw specialist in meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging. 
             Wij maken alles weer als nieuw met onze eco-vriendelijke methoden.
           </p>
@@ -35,7 +38,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             <OfferteDialog>
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation will-change-transform"
                 aria-label="Gratis offerte aanvragen - opent formulier"
               >
                 <Calculator className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" aria-hidden="true" />
@@ -45,7 +48,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             <Button 
               size="lg" 
               onClick={onWhatsApp}
-              className="text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation"
+              className="text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation will-change-transform"
               style={{ backgroundColor: '#16a34a' }}
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#15803d'}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#16a34a'}
@@ -66,7 +69,7 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             <Button 
               size="lg"
               onClick={onCall}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-10 py-4 md:py-6 text-lg md:text-xl shadow-xl rounded-xl w-full sm:w-auto min-h-[56px] touch-manipulation will-change-transform"
               aria-label="Bel direct naar DiepClean op telefoonnummer 06 34 27 37 02"
             >
               <Phone className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3" aria-hidden="true" />
@@ -76,15 +79,15 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto" role="region" aria-label="Bedrijfsstatistieken">
-            <div className="text-center">
+            <div className="text-center will-change-transform">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="300 plus tevreden klanten">300+</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Tevreden Klanten</div>
             </div>
-            <div className="text-center">
+            <div className="text-center will-change-transform">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="24 uur per dag, 7 dagen per week service">24/7</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Service Beschikbaar</div>
             </div>
-            <div className="text-center">
+            <div className="text-center will-change-transform">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="5 plus jaar ervaring">5+</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Jaar Ervaring</div>
             </div>
