@@ -36,15 +36,26 @@
   body {
     @apply bg-background text-foreground;
     font-display: swap;
+    contain: layout style;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Optimize image loading */
+  /* GPU-accelerated and optimized image handling */
   img {
     height: auto;
     max-width: 100%;
+    contain: layout;
+    transform: translateZ(0);
+  }
+  
+  .optimized-image {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
-  /* Accessibility improvements */
+  /* Accessibility improvements with performance optimization */
   button, 
   [role="button"],
   input[type="submit"],
@@ -52,9 +63,10 @@
     min-height: 44px;
     min-width: 44px;
     touch-action: manipulation;
+    contain: layout;
   }
 
-  /* Focus states for better keyboard navigation */
+  /* Enhanced focus states for better keyboard navigation */
   button:focus-visible,
   [role="button"]:focus-visible,
   input:focus-visible,
@@ -63,33 +75,46 @@
   a:focus-visible {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
+    contain: layout;
   }
 
-  /* Improved contrast for text */
+  /* Improved contrast for text with contain properties */
   .text-gray-600 {
-    color: rgb(75 85 99) !important; /* Better contrast ratio */
+    color: rgb(75 85 99) !important;
+    contain: style;
   }
 
   .text-gray-700 {
-    color: rgb(55 65 81) !important; /* Better contrast ratio */
+    color: rgb(55 65 81) !important;
+    contain: style;
   }
 
   .text-gray-800 {
-    color: rgb(31 41 55) !important; /* Better contrast ratio */
+    color: rgb(31 41 55) !important;
+    contain: style;
   }
 }
 
-/* Critical above-the-fold styles only */
 @layer utilities {
   .hero-gradient {
     background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%);
+    contain: layout paint;
   }
   
   .card-hover {
     @apply hover:shadow-2xl transition-all duration-500 hover:-translate-y-2;
+    will-change: transform, box-shadow;
+    contain: layout;
   }
 
-  /* Optimize for performance */
+  /* GPU acceleration utilities */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    contain: layout paint;
+  }
+  
   .will-change-transform {
     will-change: transform;
   }
@@ -98,9 +123,20 @@
     will-change: auto;
   }
 
-  /* Touch targets */
+  /* Touch targets with containment */
   .touch-manipulation {
     touch-action: manipulation;
+    contain: layout;
+  }
+
+  /* Layout containment for sections */
+  .section-contain {
+    contain: layout style;
+  }
+
+  /* Paint containment for isolated components */
+  .paint-contain {
+    contain: paint;
   }
 
   /* Skip link for screen readers */
@@ -118,4 +154,25 @@
   .skip-link:focus {
     top: 6px;
   }
+
+  /* WebP optimization classes */
+  .webp .webp-bg {
+    background-image: url('/path/to/image.webp');
+  }
+  
+  .no-webp .webp-bg {
+    background-image: url('/path/to/image.jpg');
+  }
+}
+
+/* Remove any loading states or transitions on page load */
+* {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Re-enable transitions after page load */
+.loaded * {
+  transition: revert !important;
+  animation: revert !important;
 }
