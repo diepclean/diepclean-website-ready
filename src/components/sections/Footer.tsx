@@ -14,6 +14,9 @@ export const Footer = () => {
               src="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" 
               alt="DiepClean Logo" 
               className="h-8 w-auto"
+              width="32"
+              height="32"
+              loading="lazy"
             />
           </div>
         </div>

@@ -23,9 +23,13 @@ export default defineConfig(({ mode }) => ({
           drop_console: true,
           drop_debugger: true,
           pure_funcs: ['console.log'],
+          passes: 2,
         },
         mangle: {
           safari10: true,
+        },
+        format: {
+          comments: false,
         },
       },
     }),
@@ -44,6 +48,9 @@ export default defineConfig(({ mode }) => ({
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
             return `assets/images/[name]-[hash][extname]`;
           }
+          if (/woff|woff2|eot|ttf|otf/i.test(ext)) {
+            return `assets/fonts/[name]-[hash][extname]`;
+          }
           return `assets/[name]-[hash][extname]`;
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -53,12 +60,17 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 500,
     reportCompressedSize: false,
     sourcemap: false,
+    cssCodeSplit: true,
   },
   server: {
     host: "::",
     port: 8080,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom'],
+    include: ['react', 'react-dom', 'lucide-react'],
+    exclude: ['@vite/client', '@vite/env'],
+  },
+  esbuild: {
+    legalComments: 'none',
   },
 }));
