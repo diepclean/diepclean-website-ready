@@ -7,7 +7,16 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   plugins: [
-    react(),
+    react({
+      // Optimize React for production
+      jsxImportSource: "@emotion/react",
+      plugins: [
+        ["@swc/plugin-styled-components", {
+          displayName: mode === "development",
+          ssr: false
+        }]
+      ]
+    }),
     mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
