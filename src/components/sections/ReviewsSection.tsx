@@ -1,83 +1,54 @@
 
 import { Star } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 export const ReviewsSection = () => {
   const reviews = [
     {
-      name: "Marina van der Berg",
-      location: "Amsterdam",
+      name: "Maria van der Berg",
       rating: 5,
-      text: "Fantastische service! Mijn bank ziet er weer uit als nieuw. Zeer professioneel en betrouwbaar.",
-      date: "2 weken geleden"
+      text: "Fantastische service! Mijn bank ziet er weer uit als nieuw.",
+      location: "Amsterdam"
     },
     {
-      name: "Peter Janssen", 
-      location: "Rotterdam",
+      name: "Jan Smit", 
       rating: 5,
-      text: "DiepClean heeft mijn tapijt perfect schoongemaakt. Alle vlekken zijn verdwenen. Aanrader!",
-      date: "1 maand geleden"
+      text: "Professioneel en snel. Zeer tevreden met het resultaat.",
+      location: "Rotterdam"
     },
     {
-      name: "Sarah de Wit",
-      location: "Utrecht", 
-      rating: 5,
-      text: "Auto-interieur reiniging was top! Zelfs de hardnekkigste vlekken zijn weg. Zeer tevreden.",
-      date: "3 weken geleden"
-    },
-    {
-      name: "Mark Verhoeven",
-      location: "Den Haag",
-      rating: 5,
-      text: "Problemen met dierlijke geuren opgelost! Professioneel team, eerlijke prijs. 5 sterren!",
-      date: "2 maanden geleden"
-    },
-    {
-      name: "Linda Bakker",
-      location: "Haarlem", 
-      rating: 5,
-      text: "Matras reiniging perfect uitgevoerd. Snelle service en zeer vriendelijk personeel.",
-      date: "1 maand geleden"
-    },
-    {
-      name: "Rob van Dijk",
-      location: "Leiden",
-      rating: 5,
-      text: "Al jaren klant bij DiepClean. Altijd tevreden over de kwaliteit en service!",
-      date: "1 week geleden"
+      name: "Linda de Vries",
+      rating: 5, 
+      text: "Vriendelijk personeel en uitstekende kwaliteit.",
+      location: "Den Haag"
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold text-gray-800 mb-4">Wat Onze Klanten Zeggen</h3>
-          <div className="flex justify-center items-center space-x-2 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
-            ))}
-            <span className="text-xl font-semibold text-gray-700 ml-2">4.9/5 (47 reviews)</span>
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Wat Onze Klanten Zeggen
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Meer dan 300 tevreden klanten gingen u voor
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
-            <Card key={index} className="bg-white">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-semibold text-gray-800">{review.name}</div>
-                  <div className="text-sm text-gray-600">{review.location}</div>
-                  <div className="text-xs text-gray-500">{review.date}</div>
-                </div>
-              </CardContent>
-            </Card>
+            <div key={index} className="bg-white rounded-lg p-6 shadow-md">
+              <div className="flex mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-600 mb-4">"{review.text}"</p>
+              <div>
+                <p className="font-semibold text-gray-900">{review.name}</p>
+                <p className="text-gray-500 text-sm">{review.location}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
