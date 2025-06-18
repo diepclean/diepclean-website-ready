@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,46 +33,28 @@
     @apply border-border;
   }
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
-
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-display: swap;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
   }
 
-  /* Performance optimized image loading */
+  /* Optimize image loading */
   img {
     height: auto;
     max-width: 100%;
-    loading: lazy;
-    decoding: async;
   }
 
-  img[fetchpriority="high"] {
-    loading: eager;
-  }
-
-  /* Performance optimized touch targets */
+  /* Accessibility improvements */
   button, 
   [role="button"],
   input[type="submit"],
-  input[type="button"],
-  a {
+  input[type="button"] {
     min-height: 44px;
     min-width: 44px;
     touch-action: manipulation;
   }
 
-  /* Optimized focus states */
+  /* Focus states for better keyboard navigation */
   button:focus-visible,
   [role="button"]:focus-visible,
   input:focus-visible,
@@ -84,35 +65,31 @@
     outline-offset: 2px;
   }
 
-  /* High contrast text for accessibility and SEO */
+  /* Improved contrast for text */
   .text-gray-600 {
-    color: rgb(75 85 99) !important;
+    color: rgb(75 85 99) !important; /* Better contrast ratio */
   }
 
   .text-gray-700 {
-    color: rgb(55 65 81) !important;
+    color: rgb(55 65 81) !important; /* Better contrast ratio */
   }
 
   .text-gray-800 {
-    color: rgb(31 41 55) !important;
+    color: rgb(31 41 55) !important; /* Better contrast ratio */
   }
 }
 
-/* Performance-optimized utilities */
+/* Critical above-the-fold styles only */
 @layer utilities {
-  /* GPU acceleration for animations */
   .hero-gradient {
     background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%);
-    transform: translateZ(0);
-    will-change: transform;
   }
   
   .card-hover {
-    @apply hover:shadow-2xl transition-all duration-300 hover:-translate-y-1;
-    will-change: transform, box-shadow;
+    @apply hover:shadow-2xl transition-all duration-500 hover:-translate-y-2;
   }
 
-  /* Optimized transforms */
+  /* Optimize for performance */
   .will-change-transform {
     will-change: transform;
   }
@@ -121,12 +98,12 @@
     will-change: auto;
   }
 
-  /* Performance touch handling */
+  /* Touch targets */
   .touch-manipulation {
     touch-action: manipulation;
   }
 
-  /* Optimized skip link */
+  /* Skip link for screen readers */
   .skip-link {
     position: absolute;
     top: -40px;
@@ -136,74 +113,9 @@
     padding: 8px;
     text-decoration: none;
     z-index: 1000;
-    transform: translateY(-100%);
-    transition: transform 0.2s ease;
   }
 
   .skip-link:focus {
-    transform: translateY(0);
-  }
-
-  /* Contain layout shifts */
-  .aspect-ratio-16-9 {
-    aspect-ratio: 16 / 9;
-  }
-
-  .aspect-ratio-1-1 {
-    aspect-ratio: 1 / 1;
-  }
-
-  /* Optimized loading states */
-  .loading-skeleton {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: loading 1.5s infinite;
-  }
-
-  @keyframes loading {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-
-  /* Remove unused CSS */
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-/* Critical performance CSS - load immediately */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Optimize for different screen sizes */
-@media (max-width: 768px) {
-  body {
-    font-size: 16px; /* Prevent zoom on iOS */
-  }
-}
-
-/* Optimize print styles */
-@media print {
-  * {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
+    top: 6px;
   }
 }

@@ -13,18 +13,13 @@
     })(window,document,'script','dataLayer','GTM-T7XXBHFR');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Preconnect to critical domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    
     <!-- Preload critical resources for LCP optimization -->
-    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" fetchpriority="high" />
-    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" fetchpriority="high" />
+    <link rel="preload" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" as="image" type="image/png" />
+    <link rel="preload" href="/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png" as="image" type="image/png" />
     
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
     
     <!-- Primary Meta Tags -->
     <title>DiepClean.nl - Professionele Meubelreiniging & Tapijtreiniging Randstad</title>
@@ -63,104 +58,21 @@
     <link rel="icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png" type="image/png">
     <link rel="apple-touch-icon" href="/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png">
 
-    <!-- Critical CSS inlined for immediate paint -->
+    <!-- Critical CSS inlined for first paint -->
     <style>
-      /* Critical above-the-fold styles */
-      * { box-sizing: border-box; }
-      
       body { 
         margin: 0; 
         padding: 0; 
-        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: system-ui, -apple-system, sans-serif;
         font-display: swap;
-        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeSpeed;
       }
-      
       .hero-loading { 
         background: linear-gradient(135deg, rgb(59 130 246) 0%, rgb(34 197 94) 100%); 
-        min-height: 100vh; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        min-height: 50vh; 
       }
-      
       img { 
         height: auto; 
         max-width: 100%; 
-        loading: lazy;
-        decoding: async;
-      }
-      
-      /* Hero section critical styles */
-      .hero-bg {
-        background-image: url('/lovable-uploads/606849a5-f03a-4be4-a30e-1450519d012d.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      
-      /* Critical button styles */
-      .btn-primary {
-        background-color: rgb(37 99 235);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 0.75rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        transition: background-color 0.2s ease;
-        border: none;
-        cursor: pointer;
-        min-height: 56px;
-        touch-action: manipulation;
-      }
-      
-      .btn-primary:hover {
-        background-color: rgb(29 78 216);
-      }
-      
-      .btn-green {
-        background-color: rgb(34 197 94);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 0.75rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        transition: background-color 0.2s ease;
-        border: none;
-        cursor: pointer;
-        min-height: 56px;
-        touch-action: manipulation;
-      }
-      
-      .btn-green:hover {
-        background-color: rgb(21 128 61);
-      }
-      
-      /* Layout utilities */
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
-      
-      .text-center { text-align: center; }
-      .font-bold { font-weight: 700; }
-      .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-      .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-      .mb-6 { margin-bottom: 1.5rem; }
-      .mb-8 { margin-bottom: 2rem; }
-      .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-      
-      @media (min-width: 768px) {
-        .text-4xl { font-size: 3.75rem; line-height: 1; }
-        .text-lg { font-size: 1.5rem; line-height: 2rem; }
       }
     </style>
   </head>
@@ -172,40 +84,10 @@
     <!-- End Google Tag Manager (noscript) -->
     
     <div id="root">
-      <div class="hero-loading">
-        <div class="container text-center">
-          <h1 class="text-4xl font-bold mb-6">DiepClean.nl</h1>
-          <p class="text-lg mb-8">Professionele Reinigingsdiensten</p>
-        </div>
-      </div>
+      <div class="hero-loading"></div>
     </div>
     
-    <!-- Defer non-critical JavaScript -->
-    <script type="module" src="/src/main.tsx" defer></script>
-    
-    <!-- Web Vitals Monitoring -->
-    <script>
-      // Monitor Core Web Vitals
-      function vitals(metric) {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', metric.name, {
-            event_category: 'Web Vitals',
-            event_label: metric.id,
-            value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
-            non_interaction: true,
-          });
-        }
-      }
-      
-      // Load web-vitals library
-      import('https://unpkg.com/web-vitals@3/dist/web-vitals.js').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(vitals);
-        getFID(vitals);
-        getFCP(vitals);
-        getLCP(vitals);
-        getTTFB(vitals);
-      });
-    </script>
+    <script type="module" src="/src/main.tsx"></script>
     
     <!-- Optimized Structured Data -->
     <script type="application/ld+json">
@@ -216,7 +98,7 @@
       "image": "/lovable-uploads/19e35f6d-df31-4df5-9608-ef160f3e904d.png",
       "description": "Professionele meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging in de Randstad.",
       "url": "https://diepclean.nl",
-      "telephone": "+31634273702",
+      "telephone": "+31612345678",
       "priceRange": "€€",
       "address": {
         "@type": "PostalAddress",
@@ -227,30 +109,6 @@
         "@type": "AggregateRating",
         "ratingValue": "4.9",
         "reviewCount": "500"
-      },
-      "serviceArea": {
-        "@type": "Place",
-        "name": "Randstad, Nederland"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Reinigingsdiensten",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Meubelreiniging"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Tapijtreiniging"
-            }
-          }
-        ]
       }
     }
     </script>
