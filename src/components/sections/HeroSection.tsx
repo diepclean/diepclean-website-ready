@@ -17,16 +17,16 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
       }}
       aria-label="Hero sectie met hoofdboodschap en contact opties"
     >
-      {/* Optimized overlay for better performance */}
-      <div className="absolute inset-0 bg-white/50" aria-hidden="true"></div>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/20" aria-hidden="true"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Optimized heading for LCP with proper heading hierarchy */}
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-700">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+            <span style={{ color: '#16a34a' }}>Professionele</span> <span className="text-blue-300">Reiniging</span> <span style={{ color: '#16a34a' }}>Services</span>
           </h1>
-          <p className="text-lg md:text-2xl text-gray-800 mb-8 leading-relaxed font-medium">
+          <p className="text-lg md:text-2xl text-white mb-8 leading-relaxed font-medium drop-shadow-md">
             DiepClean.nl is uw specialist in meubelreiniging, tapijtreiniging, trapreiniging, auto-interieur en matrasreiniging. 
             Wij maken alles weer als nieuw met onze eco-vriendelijke methoden.
           </p>
@@ -75,7 +75,8 @@ export const HeroSection = ({ onWhatsApp, onCall }: HeroSectionProps) => {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto" role="region" aria-label="Bedrijfsstatistieken">
+          {/* Statistics section with semi-transparent background */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl p-8" role="region" aria-label="Bedrijfsstatistieken">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold" style={{ color: '#16a34a' }} aria-label="300 plus tevreden klanten">300+</div>
               <div className="text-gray-800 text-base md:text-lg font-medium">Tevreden Klanten</div>
